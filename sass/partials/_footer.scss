@@ -1,0 +1,113 @@
+.footer-container {
+  display: grid;
+}
+
+.logo-social-container {
+  background-color: map-get($colours, "footer");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+
+
+  & .logo-footer {
+    padding: 15px;
+  }
+
+  & .social-media {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 30px;
+  }
+}
+
+.social-media a {
+  text-align: center;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+
+  & i {
+    font-size: 1.3rem;
+  }
+
+  &.facebook {
+    background-color: map-get($coloursSocial, "facebook");
+  }
+
+  &.pinterest {
+    background-color: map-get($coloursSocial, "pinterest");
+  }
+  
+  &.instagram {
+    background-color: map-get($coloursSocial, "instagram");
+  }
+  
+  &.youtube {
+    background-color: map-get($coloursSocial, "youtube");
+    
+  }
+}
+
+.logo-footer img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+
+
+.info-container {
+  background-color: map-get($colours, "footer");
+  color: #fff;
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+
+  & div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & h3 {
+    display: block;
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  & h3:before {
+    content: "";
+    position: absolute;
+    width: 15%;
+    height: 1px;
+    bottom: 0;
+    border-bottom: 1px solid #fff;
+  }
+}
+
+.newsletter-form {
+  width: 200px;
+
+  & input {
+    background-color: map-get($colours, "footer");
+    border-radius: 5px;
+    border: 1px solid white;
+  }
+
+  & button {
+    width: 100%;
+    margin-top: 4px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: map-get($colours, "footer");
+    background-color: #fff;
+  }
+
+  & ::placeholder {
+    color: #fff;
+  }
+}
+

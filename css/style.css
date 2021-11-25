@@ -131,4 +131,145 @@ nav a {
 .login-container #loggedUser {
   display: none;
 }
+
+.footer-container {
+  display: -ms-grid;
+  display: grid;
+}
+
+.logo-social-container {
+  background-color: #758690;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.logo-social-container .logo-footer {
+  padding: 15px;
+}
+
+.logo-social-container .social-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 30px;
+}
+
+.social-media a {
+  text-align: center;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.social-media a i {
+  font-size: 1.3rem;
+}
+
+.social-media a.facebook {
+  background-color: #3b5998;
+}
+
+.social-media a.pinterest {
+  background-color: #c8232c;
+}
+
+.social-media a.instagram {
+  background-color: #cd486b;
+}
+
+.social-media a.youtube {
+  background-color: #c4302b;
+}
+
+.logo-footer img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.info-container {
+  background-color: #758690;
+  color: #fff;
+  margin-top: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 20px;
+}
+
+.info-container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.info-container h3 {
+  display: block;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.info-container h3:before {
+  content: "";
+  position: absolute;
+  width: 15%;
+  height: 1px;
+  bottom: 0;
+  border-bottom: 1px solid #fff;
+}
+
+.newsletter-form {
+  width: 200px;
+}
+
+.newsletter-form input {
+  background-color: #758690;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+.newsletter-form button {
+  width: 100%;
+  margin-top: 4px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  color: #758690;
+  background-color: #fff;
+}
+
+.newsletter-form ::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.newsletter-form :-ms-input-placeholder {
+  color: #fff;
+}
+
+.newsletter-form ::-ms-input-placeholder {
+  color: #fff;
+}
+
+.newsletter-form ::placeholder {
+  color: #fff;
+}
 /*# sourceMappingURL=style.css.map */
