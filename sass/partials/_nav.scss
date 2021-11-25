@@ -1,43 +1,138 @@
-.navbar {
+// .navbar {
+//   background-color: #fefefe;
+//   filter: drop-shadow(0 0 8px map-get($colours, "secondary"));
+//   margin-bottom: 10px;
+// }
+
+// .navbar-toggler {
+//   border: none;
+//   margin-top: 40px;
+// }
+
+// .nav-link {
+//   font-family: $titles;
+//   font-size: 2rem;
+//   color: map-get($colours, "primary");
+// }
+
+
+nav {
+  position: relative;
+  height: 140px;
+  // margin: 0px auto;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  justify-items: center;
+  align-items: end;
   background-color: #fefefe;
   filter: drop-shadow(0 0 8px map-get($colours, "secondary"));
   margin-bottom: 10px;
+  padding: 10px;
+
+  & ul {
+    padding: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: 0;
+    top: 141px;
+    width: 100%;
+    min-height: 200px;
+    justify-content: space-evenly;
+    background-color: #fff;
+    transform: translateX(110%);
+    transition: transform 0.4s ease-in;
+    z-index: 1;
+  }
+
+  & li {
+    list-style: none;
+    opacity: 1;
+  }
+
+  & a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: map-get($colours, "secondary");
+  }
 }
 
-.navbar-toggler {
-  border: none;
-  margin-top: 40px;
+.nav-visible {
+  transform: translateX(0%);
 }
+
+
+// @keyframes fade-in {
+//   0% {opacity: 0;
+//       transform: translateX(150px);
+//   }
+
+//   100% {opacity: 1;
+//       transform: translateX(0px);
+//   }
+// }
+
+
+#logo {
+  display: block;
+  max-width: 200px;
+  margin: 0px auto;
+  align-self: center;
+
+  & img {
+    width: 100%;
+  }
+}
+
 
 #cart {
   position: relative;
-  align-self: flex-end;
   border: 1px solid (map-get($colours, "secondary"));
   border-radius: 50%;
   padding: 10px;
-  height: 45px;
-  width: 45px;
-  // top: 210px;
-  // right: 10px;
+  height: 40px;
+  width: 40px;
+
+  & i {
+    font-size: 1.3rem;
+    color: map-get($colours, "primary");
+    text-align: center;
+    display: block;
+  }
+
+  & #counter {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    border: 1px solid map-get($colours, "primary");
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    background-color: #fff;
+    text-align: center;
+    font-weight: 600;
+    z-index: 1;
+  }
 }
 
-#cart i {
-  font-size: 1.4rem;
-  color: map-get($colours, "primary");
-  text-align: center;
-  display: block;
+#burgerBtn {
+  font-size: 1.8rem;
+  color: map-get($colours, "primary")
 }
 
-#counter{
+
+.login-container {
   position: absolute;
-  top: -10px;
-  right: -5px;
-  border: 1px solid map-get($colours, "primary");
-  border-radius: 50%;
-  height: 22px;
-  width: 22px;
-  background-color: #fff;
-  text-align: center;
-  font-weight: 600;
-  z-index: 1;
+  top: 0;
+  right: 25px;
+
+  & i {
+    font-size: 1.4rem;;
+  }
+
+  & #loggedUser {
+    display: none;
+  }
 }

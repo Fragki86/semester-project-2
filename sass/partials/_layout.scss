@@ -2,13 +2,10 @@ body {
   overflow-x: hidden;
 }
 
+// header {
+//   margin-top: 0;
+//   position: sticky;
+//   top: 0px;
 
-#logo {
-  display: inline-block;
-  width: 55%;
-  margin: 0px auto;
+// }
 
-  & img {
-    width: 100%;
-  }
-}

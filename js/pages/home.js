@@ -1,4 +1,5 @@
-import { nav } from "../modules/navMenu.js";
+import { nav } from "../modules/layout/nav.js";
 
 
 nav();
+
