@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="220.989" height="38.851" viewBox="0 0 220.989 38.851">
+  <defs>
+    <filter id="Polygon_1" x="65.659" y="8.118" width="21.782" height="21.385" filterUnits="userSpaceOnUse">
+      <feOffset dx="-2" dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feFlood flood-color="#2f5f5f" flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Polygon_2" x="90.209" y="0" width="40.746" height="38.851" filterUnits="userSpaceOnUse">
+      <feOffset dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur-2"/>
+      <feFlood flood-color="#2f5f5f" flood-opacity="0.157"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Polygon_3" x="132.799" y="8.118" width="21.389" height="20.963" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="4" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur-3"/>
+      <feFlood flood-color="#2f5f5f" flood-opacity="0.157"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_64" data-name="Group 64" transform="translate(-838 -2226.5)">
+    <g id="Group_63" data-name="Group 63" transform="translate(910.159 2227)">
+      <g transform="matrix(1, 0, 0, 1, -72.16, -0.5)" filter="url(#Polygon_1)">
+        <path id="Polygon_1-2" data-name="Polygon 1" d="M5.619,0,6.945,4.11h4.292L7.765,6.65l1.326,4.11L5.619,8.219l-3.473,2.54L3.473,6.65,0,4.11H4.292Z" transform="translate(72.16 10.38) rotate(-9)" fill="#2f5f5f"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -72.16, -0.5)" filter="url(#Polygon_2)">
+        <path id="Polygon_2-2" data-name="Polygon 2" d="M14.923,2.891a1,1,0,0,1,1.9,0l2.571,7.823a1,1,0,0,0,.95.688h8.3a1,1,0,0,1,.583,1.812l-6.692,4.807a1,1,0,0,0-.367,1.124l2.561,7.792a1,1,0,0,1-1.533,1.124l-6.736-4.838a1,1,0,0,0-1.167,0L8.554,28.061a1,1,0,0,1-1.533-1.124l2.561-7.792a1,1,0,0,0-.367-1.124L2.523,13.214A1,1,0,0,1,3.106,11.4h8.3a1,1,0,0,0,.95-.688Z" transform="translate(94.71 0.5)" fill="#2f5f5f"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -72.16, -0.5)" filter="url(#Polygon_3)">
+        <path id="Polygon_3-2" data-name="Polygon 3" d="M5.449,0,6.736,3.967H10.9L7.531,6.419l1.286,3.967L5.449,7.934,2.082,10.386,3.368,6.419,0,3.967H4.163Z" transform="translate(136.92 8.62) rotate(9)" fill="#2f5f5f"/>
+      </g>
+    </g>
+    <g id="Group_59" data-name="Group 59" transform="translate(838 2238.275)">
+      <circle id="Ellipse_63" data-name="Ellipse 63" cx="3.157" cy="3.157" r="3.157" transform="translate(0 0)" fill="#9f4f4f"/>
+      <circle id="Ellipse_64" data-name="Ellipse 64" cx="3.157" cy="3.157" r="3.157" transform="translate(12.628 0)" fill="#9f4f4f"/>
+      <circle id="Ellipse_65" data-name="Ellipse 65" cx="3.157" cy="3.157" r="3.157" transform="translate(25.256 0)" fill="#9f4f4f"/>
+      <circle id="Ellipse_66" data-name="Ellipse 66" cx="3.157" cy="3.157" r="3.157" transform="translate(37.884 0)" fill="#9f4f4f"/>
+      <circle id="Ellipse_71" data-name="Ellipse 71" cx="3.157" cy="3.157" r="3.157" transform="translate(50.512 0)" fill="#9f4f4f"/>
+    </g>
+    <g id="Group_60" data-name="Group 60" transform="translate(1002.163 2238.275)">
+      <circle id="Ellipse_72" data-name="Ellipse 72" cx="3.157" cy="3.157" r="3.157" transform="translate(0 0)" fill="#9f4f4f"/>
+      <circle id="Ellipse_73" data-name="Ellipse 73" cx="3.157" cy="3.157" r="3.157" transform="translate(12.628 0)" fill="#9f4f4f"/>
+      <circle id="Ellipse_74" data-name="Ellipse 74" cx="3.157" cy="3.157" r="3.157" transform="translate(25.256 0)" fill="#9f4f4f"/>
+      <circle id="Ellipse_75" data-name="Ellipse 75" cx="3.157" cy="3.157" r="3.157" transform="translate(37.884 0)" fill="#9f4f4f"/>
+      <circle id="Ellipse_76" data-name="Ellipse 76" cx="3.157" cy="3.157" r="3.157" transform="translate(50.512 0)" fill="#9f4f4f"/>
+    </g>
+  </g>
+</svg>

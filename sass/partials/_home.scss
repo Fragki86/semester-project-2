@@ -1,0 +1,33 @@
+.category-card {
+  display: flex;
+  position: relative;
+  // border: 1px solid black;
+  box-shadow: 0 0 10px map-get($colours, "secondary");
+  border-radius: 5px;
+  width: 200px;
+  height: 200px;
+
+  & img {
+    object-fit: contain;
+  }
+
+  & .category-title {
+    display: block;
+    width: 80%;
+    position: absolute;
+    margin: auto auto;
+    padding: 3px;
+    border: 1px solid map-get($colours, "secondary");
+    background-color: #fff;
+    align-self: center;
+    z-index: 2;
+  }
+
+  & h3 {
+    border: 1px solid map-get($colours, "secondary");
+    font-size: 1.2rem;
+    padding: 3px;
+    margin: auto;
+    text-align: center;
+  }
+}

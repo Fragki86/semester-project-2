@@ -1,5 +1,11 @@
 .footer-container {
   display: grid;
+  margin-top: 80px;
+
+  & a {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .logo-social-container {
@@ -72,10 +78,16 @@
     flex-direction: column;
   }
 
+  & div:last-child {
+    padding-bottom: 50px;
+  }
+
+
   & h3 {
     display: block;
     position: relative;
     padding-bottom: 2px;
+    margin-top: 20px;
   }
 
   & h3:before {

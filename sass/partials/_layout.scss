@@ -9,3 +9,9 @@ body {
 
 // }
 
+.separator {
+  width: 90%;
+  margin: 50px auto;
+  height: 2px;
+  border-bottom: 1px solid map-get($colours, "text")
+}
