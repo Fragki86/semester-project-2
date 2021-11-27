@@ -29,6 +29,7 @@ nav {
   filter: drop-shadow(0 0 8px map-get($colours, "secondary"));
   margin-bottom: 10px;
   padding: 10px;
+  z-index: 2;
 
   & ul {
     padding: 0;
@@ -44,7 +45,6 @@ nav {
     background-color: #fff;
     transform: translateX(110%);
     transition: transform 0.4s ease-in;
-    z-index: 1;
   }
 
   & li {

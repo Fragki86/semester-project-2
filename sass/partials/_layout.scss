@@ -15,3 +15,14 @@ body {
   height: 2px;
   border-bottom: 1px solid map-get($colours, "text")
 }
+
+section {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.title-custom-line {
+  display: block;
+  margin: 0px auto;
+  width: 50%;
+}

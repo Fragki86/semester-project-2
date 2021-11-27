@@ -17,12 +17,15 @@ $paragraphs3: 'Lato', sans-serif;
 
 
 // Bootstrap variables 
-$nav-link-color: blue;
+$carousel-control-opacity: 1;
+
 
 
 
 // Imports
+// @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./partials/_layout.scss";
 @import "./partials/_nav.scss";
 @import "./partials/_footer.scss";
 @import "./partials/_home.scss";
+@import "./partials/_typography.scss";

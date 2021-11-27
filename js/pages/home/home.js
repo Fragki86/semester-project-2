@@ -1,6 +1,9 @@
 import { footer } from "../../modules/layout/footer.js";
 import { nav } from "../../modules/layout/nav.js";
 import { api } from "../../modules/utilities/api.js";
+import { banner } from "./banner.js";
+import { newProducts } from "./newProducts.js";
+import { exploreByAge } from "./exploreByAge.js";
 
 
 nav();
@@ -18,41 +21,13 @@ async function getApi() {
     const bannerResults = await bannerResponse.json();
 
     // createHomeHtml(results);
-    // importImage(bannerResults)
+    banner(bannerResults)
+    newProducts(results);
+    exploreByAge();
     // titleFilter(results)    
 
   } catch(error) {
     console.log(error)
   }
 }
-
 getApi();
-
-
-// function createHomeHtml(results) {
-//   const container = document.querySelector(".container");
-
-//   for (let i = 0; i < results.length; i++) {
-//     console.log(results[i].image[0].url)
-
-//     const featured = results[i].featured;
-
-//     if (featured) {
-//     container.innerHTML += `<div>
-//                               <img src="${api}${results[i].image[0].url}"
-//                             </div>`}
-
-//   }
-
-
-// }
-
-
-
-// function importImage(bannerResults) {
-//   const bannerContainer = document.querySelector("#bannerContainer");
-//   const bannerUrl = bannerResults.hero_banner[0].url;
-  
-//   bannerContainer.innerHTML = `<img src="${api}${bannerUrl}" class="banner-img">`
-
-// }
