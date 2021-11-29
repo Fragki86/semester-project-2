@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
 // Custom variables
-$colours: ("primary": #9F4f4f, "secondary": #2f5f5f, "text": #402F28, "prices": #da4d51, "footer": #758690);
+$colours: ("primary": #9F4f4f, "secondary": #2f5f5f, "text": #402F28, "prices": #da4d51, "footer": #758690, "btn-gradient": linear-gradient(45deg, #2F5f5f, #00a8a8));
 $coloursAlerts: ("success": #40ab21, "error": #ff0007, "warning": #ff8000);
 $coloursSocial: ("pinterest": #c8232c, "youtube": #c4302b, "instagram": #cd486b, "facebook": #3b5998);
 
@@ -29,3 +29,6 @@ $carousel-control-opacity: 1;
 @import "./partials/_footer.scss";
 @import "./partials/_home.scss";
 @import "./partials/_typography.scss";
+@import "./partials/_products.scss";
+@import "./partials/_productDetails.scss";
+@import "./partials/_buttons.scss";

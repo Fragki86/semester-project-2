@@ -117,6 +117,7 @@
     border: 1px solid #fff;
     color: map-get($colours, "footer");
     background-color: #fff;
+    transition: background-color .4s, color .4s;
   }
 
   & ::placeholder {
@@ -124,3 +125,43 @@
   }
 }
 
+
+
+@media only screen and (min-width: 900px) {
+  .logo-social-container {
+    flex-direction: row;
+    justify-content: space-between;
+    
+    & .social-media {
+        padding-bottom: 0;
+        margin-right: 100px;
+    }
+  }
+
+  .info-container {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    
+    & h3:before {
+      width: 40%;
+    }
+  }
+
+  .newsletter-form {
+    width: 350px;
+    
+    & input {
+      width: 80%;
+      // margin: 0px auto;
+    }
+
+    & button {
+      width: 80%;
+    }
+
+    & button:hover {
+      background-color: map-get($colours, "footer");
+      color: #fff;
+    }
+  }
+}

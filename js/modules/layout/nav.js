@@ -3,7 +3,6 @@ export function nav() {
 
   navMenu.innerHTML = `
                 <nav>
-                  
                     <a href="shopping-cart.html" id="cart">   
                       <div id="counter"></div>
                       <i class="fas fa-shopping-bag"></i>
@@ -26,7 +25,6 @@ export function nav() {
                       <a href="login.html"><i class="fas fa-user"></i></a>
                       <a href="login.html" id="loggedUser">Login</a>
                     </div>
-                  
                 </nav>
                 `
 

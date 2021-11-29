@@ -20,7 +20,7 @@ nav {
   position: relative;
   height: 140px;
   // margin: 0px auto;
-  max-width: 900px;
+  width: 100%;
   display: grid;
   grid-template-columns: 15% 70% 15%;
   justify-items: center;
@@ -40,7 +40,7 @@ nav {
     right: 0;
     top: 141px;
     width: 100%;
-    min-height: 200px;
+    height: 200px;
     justify-content: space-evenly;
     background-color: #fff;
     transform: translateX(110%);
@@ -77,7 +77,7 @@ nav {
 
 #logo {
   display: block;
-  max-width: 200px;
+  width: 200px;
   margin: 0px auto;
   align-self: center;
 
@@ -134,5 +134,137 @@ nav {
 
   & #loggedUser {
     display: none;
+  }
+}
+
+
+@media only screen and (min-width: 900px) {
+  #burgerBtn {
+    display: none;
+  }
+
+  
+  nav {
+    position: relative;
+    // top: 0;
+    height: 140px;
+    // margin: 0px auto;
+    display: grid;
+    grid-template-columns: 30% 50% 10% 10%;
+    grid-template-rows: 1% 99%;
+    // justify-items: center;
+    align-items: center;
+    z-index: 2;
+  
+    & ul {
+      position: relative;
+      // padding: 0;
+      margin: 20px 0px 0px 25px;
+      display: flex;
+      flex-direction: row;
+      // align-items: center;
+      grid-column: 2;
+      grid-row: 2;
+      // right: 0;
+      // top: 0;
+      width: 100%;
+      height: 0px;
+      top: 0px;
+      // min-height: 200px;
+      justify-content: flex-start;
+      background-color: none;
+      transform: translateX(0%);
+    }
+  
+    & li {
+      list-style: none;
+      margin: 15px;
+      padding: 3px;
+      border: 1px dashed #fefefe;
+      padding: 3px;
+      transition: border .6s;
+    }
+
+    & li:hover {
+      border: 1px dashed map-get($colours, "secondary");
+      padding: 3px;
+      color: map-get($colours, "secondary");
+    }
+  
+    & a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: map-get($colours, "secondary");
+    }
+
+    & a:hover {
+      color: map-get($colours, "secondary");
+    }
+  }
+
+  #logo {
+    display: block;
+    grid-column: 1;
+    grid-row: 2;
+    width: 300px;
+    margin: 0px auto;
+    align-self: center;
+  
+    & img {
+      width: 100%;
+    }
+  }
+
+  #cart {
+    position: relative;
+    border: 1px solid (map-get($colours, "secondary"));
+    margin-right: 40px;
+    grid-column: 4;
+    grid-row: 2;
+    border-radius: 50%;
+    padding: 15px;
+    height: 60px;
+    width: 60px;
+  
+    & i {
+      font-size: 1.6rem;
+      color: map-get($colours, "primary");
+      text-align: center;
+      display: block;
+    }
+  
+    & #counter {
+      position: absolute;
+      top: -10px;
+      right: -5px;
+      border: 1px solid map-get($colours, "primary");
+      border-radius: 50%;
+      height: 27px;
+      width: 27px;
+      background-color: #fff;
+      text-align: center;
+      font-weight: 600;
+      z-index: 1;
+    }
+  }
+
+  .login-container {
+    position: relative;
+    display: flex;
+    // margin: 20px auto;
+    padding-top: 20px;
+    // top: 0;
+    // right: 25px;
+    grid-column: 3;
+    grid-row: 2;
+  
+    & i {
+      font-size: 1.4rem;
+      margin-right: 10px;
+    }
+  
+    & #loggedUser {
+      display: block;
+    }
   }
 }

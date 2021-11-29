@@ -1,0 +1,38 @@
+.product-details-container {
+  display: grid;
+  
+  width: 100%;
+
+  & h2 {
+    color: map-get($colours, "secondary")
+  }
+
+  & img {
+    width: 100%;
+  }
+
+  & p:first-child {
+    color: map-get($colours, "text");
+    font-family: $paragraphs3;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  & i {
+    margin-left: 1rem;
+  }
+
+  & .card-price {
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+  }
+}
+
+.details-title img{
+  width: 40%;
+}
+
+.details-image {
+  margin-top: 1.7rem;
+}
+

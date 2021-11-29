@@ -1,0 +1,13 @@
+.button-styles {
+  background-color: map-get($colours, "secondary");
+  color: #fff;
+  font-family: $titles;
+  border-radius: 8px;
+  border: none;
+  height: 2.3rem;
+  transition: box-shadow .2s;
+}
+
+.button-styles:hover {
+  box-shadow: 0 0 8px map-get($colours, "text");
+}

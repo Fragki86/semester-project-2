@@ -1,0 +1,30 @@
+#searchForm {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 10px auto;
+  
+  & #search {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 10px map-get($colours, "secondary");
+    height: 2rem;
+  }
+
+  & i {
+    color: map-get($colours, "primary");
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+.product-card {
+  margin: 30px auto;
+
+  & a {
+    text-decoration: none;
+  }
+}
