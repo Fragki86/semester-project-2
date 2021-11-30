@@ -1,11 +1,11 @@
 import { api } from "../../modules/utilities/api.js"
-import { getFromCart, addToCart } from "../../localStorage/addToCart.js";
+// import { getFromCart, addToCart } from "../../localStorage/addToCart.js";
 
 export function detailsHtml(results) {
 
   const detailsContainer = document.querySelector(".product-details-container");
-  const getCartProducts = getFromCart();
-  detailsContainer.innerHTML = "";
+  // const getCartProducts = getFromCart();
+  
 
   const title = results.title;
   const price = results.price;
@@ -36,11 +36,5 @@ export function detailsHtml(results) {
                                 // const priceData = this.dataset.price;
   
                                 // const addProduct = {id: idData, title: titleData, price: priceData};
-  const cartBtn = document.querySelector("#cartBtn");
-  cartBtn.addEventListener = ("click", addProduct);
-
-  function addProduct() {
-    cartApi.push(showInCart);
-    localStorage.setItem("cartApi", JSON.stringify())
-  }
-};
+  
+}
