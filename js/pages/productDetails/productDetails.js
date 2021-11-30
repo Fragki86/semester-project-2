@@ -1,6 +1,9 @@
 import { api } from "../../modules/utilities/api.js";
 import { nav } from "../../modules/layout/nav.js";
 import { footer } from "../../modules/layout/footer.js";
+import { detailsHtml } from "./detailsHtml.js";
+
+import { addToCart, getFromCart } from "../../localStorage/addToCart.js";
 
 nav();
 footer();
@@ -19,30 +22,13 @@ async function getDetails() {
   try {
     const response = await fetch(productUrl);
     const results = await response.json();
-    const detailsContainer = document.querySelector(".product-details-container");
-    console.log(results.image[0].url)
-    const title = results.title;
-    const price = results.price;
-    const description = results.description;
-    const image = results.image[0].url;
+
+    detailsHtml(results);
     
-    document.title = results.title;
+    
 
 
-    detailsContainer.innerHTML = `
-                                <div class="details-title">
-                                  <h2>${title}</h2>
-                                  <img src="images/title-line.svg" class="title-custom-line">
-                                </div>
-                                <div class="details-image">
-                                  <img src="${api}${image}" alt="">
-                                </div>
-                                
-                                  <p class="description">${description}</p>
-                                  <p class="card-price">${price}$</p>
-                                
-                                  <button id="cartBtn" class="button-styles">Add to cart<i class="fas fa-shopping-bag"></i></button>
-                                  `
+    
 
   } catch(error) {
     console.log(error)

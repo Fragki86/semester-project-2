@@ -5,8 +5,6 @@ export function newProducts(results) {
   const largeScreensContainer = document.querySelector(".lg-screens-container");
 
   for (let i = 0; i < results.length; i++) {
-    console.log(results[i].price)
-
     const featured = results[i].featured;
 
     if (featured) {
@@ -22,15 +20,17 @@ export function newProducts(results) {
                             </div>
                             `
 
-      largeScreensContainer.innerHTML += `<div id="newCont">
-                                            <div class="card" style="width: 85%">
-                                              <img src="${api}${results[i].image[0].url}" class="d-block w-100">
-                                              <div class="card-body">
-                                                <h5 class="card-title">${results[i].title}</h5>
-                                                <p class="card-price">${results[i].price}$</p>
+      largeScreensContainer.innerHTML += `<a href="productDetails.html?id=${results[i].id}">
+                                            <div id="newCont">
+                                              <div class="card" style="width: 85%">
+                                                <img src="${api}${results[i].image[0].url}" class="d-block w-100">
+                                                <div class="card-body">
+                                                  <h5 class="card-title">${results[i].title}</h5>
+                                                  <p class="card-price">${results[i].price}$</p>
+                                                </div>
                                               </div>
                                             </div>
-                                          </div>`
+                                          </a>`
     }
 
   }
