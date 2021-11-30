@@ -14,7 +14,7 @@ export function createProductsHtml(results) {
     
 
       productsContainer.innerHTML += `
-                            <div class="product-card">
+                            
                               <a href="productDetails.html?id=${productId}">
                               <div class="card" style="width: 85%">
                                 <img src="${api}${image}" class="d-block w-100" alt="">
@@ -24,7 +24,7 @@ export function createProductsHtml(results) {
                                 </div>
                               </div>
                               </a>
-                            </div>
+                            
                             `
   }
 }

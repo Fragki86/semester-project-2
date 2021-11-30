@@ -1,7 +1,7 @@
 #searchForm {
   display: block;
   position: relative;
-  width: 90%;
+  width: 60%;
   margin: 10px auto;
   
   & #search {
@@ -21,10 +21,23 @@
   }
 }
 
-.product-card {
-  margin: 30px auto;
+.container {
+  display: grid;
+  gap: 20px;
+}
 
-  & a {
-    text-decoration: none;
+
+
+
+@media only screen and (min-width: 900px) {
+  #searchForm {
+    width: 40%;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 80%;
+    margin-top: 50px;
   }
 }

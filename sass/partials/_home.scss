@@ -13,8 +13,8 @@
 
 .banner-title {
   position: absolute;
-  top: 4rem;
-  left: 4rem;
+  top: 2rem;
+  right: 1rem;
 
   & .separator {
     margin: 0 auto;
@@ -73,6 +73,12 @@
 
 
 /* Category cards */
+.categories-container {
+  display: grid;
+  width: 90%;
+  margin: 10px auto;
+}
+
 .category-card {
   display: flex;
   align-items: center;
@@ -81,7 +87,7 @@
   // border: 1px solid black;
   box-shadow: 0 0 10px map-get($colours, "secondary");
   border-radius: 5px;
-  width: 75%;
+  width: 250px;
   height: 260px;
   margin: 20px auto;
 
@@ -109,5 +115,70 @@
     padding: 7px;
     margin: auto;
     text-align: center;
+  }
+}
+
+#newCont {
+  display: none;
+}
+
+
+
+
+@media only screen and (min-width: 900px) {
+  /* New Products */
+  #newCont {
+    display: grid;
+  }
+
+  .lg-screens-container {
+    width: 80%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+  /* Banner */
+  .banner-img {
+    width: 100%;
+    height: 800px;
+  }
+
+  .banner-title {
+    position: absolute;
+    top: 6rem;
+    right: 10rem;
+
+    & h2 {
+      font-size: 5vw;
+    }
+  }
+
+
+  /* Age Cubes */
+  .age-cubes-grid {
+    margin: 20px auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    row-gap: 15px;
+
+    & img {
+      width: 50%;
+    }
+
+    & a {
+      text-align: center;
+    }
+  }
+
+  /* Categories */
+  .categories-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+    margin: 10px auto;
+    gap: 40px;
   }
 }

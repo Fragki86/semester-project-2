@@ -11,7 +11,7 @@
     width: 100%;
   }
 
-  & p:first-child {
+  & .description {
     color: map-get($colours, "text");
     font-family: $paragraphs3;
     width: 90%;
@@ -24,7 +24,7 @@
 
   & .card-price {
     margin-top: 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -36,3 +36,49 @@
   margin-top: 1.7rem;
 }
 
+
+
+@media only screen and (min-width: 900px) {
+  .product-details-container {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(4, 1fr);
+
+    & .details-image {
+      grid-column: 1;
+      grid-row: 1/6;
+    }
+
+    & .details-title {
+      grid-row: 1;
+      align-self: end;
+    }
+
+    & .description {
+      grid-row: 2;
+      width: 80%;
+      align-self: center;
+    }
+
+    & .card-price {
+      grid-row: 3;
+      align-self: center;
+      font-size: 1.4rem;
+    }
+
+    & button {
+      grid-row: 4;
+      width: 300px;
+      margin: 0px auto;
+    }
+
+    
+  }
+
+  
+
+  
+
+  
+
+  
+}

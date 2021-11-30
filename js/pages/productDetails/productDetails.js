@@ -37,10 +37,10 @@ async function getDetails() {
                                 <div class="details-image">
                                   <img src="${api}${image}" alt="">
                                 </div>
-                                <div class="details-info">
-                                  <p>${description}</p>
+                                
+                                  <p class="description">${description}</p>
                                   <p class="card-price">${price}$</p>
-                                </div>
+                                
                                   <button id="cartBtn" class="button-styles">Add to cart<i class="fas fa-shopping-bag"></i></button>
                                   `
 

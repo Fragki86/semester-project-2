@@ -2,7 +2,7 @@ import { api } from "../../modules/utilities/api.js"
 
 export function banner() {
   const bannerContainer = document.querySelector("#bannerContainer");
-  const bannerUrl = "/uploads/eco_kids_banner_027244849c.jpg";
+  const bannerUrl = "/uploads/banner_img_d1df18f497.jpg";
   
   bannerContainer.innerHTML = `<div class="banner">
                                 <img src="${api}${bannerUrl}" class="banner-img">
