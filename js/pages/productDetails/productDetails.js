@@ -96,6 +96,7 @@ async function getDetails() {
     window.localStorage.setItem("Current Product Showing", JSON.stringify(results));
     detailsContainer.innerHTML = "";
     // showInCart = results;
+    console.log(showInCart);
     detailsHtml(results);
     
   } catch(error) {
@@ -143,7 +144,6 @@ function detailsHtml(results) {
 
 getDetails().then(() => {
   const cartBtn = document.querySelector("#cartBtn");
-  const counter = document.querySelector("#counter");
 
   const cartAPI = JSON.parse(localStorage.getItem("cartAPI")) || []
 
@@ -151,9 +151,9 @@ getDetails().then(() => {
 
   function addProduct() {
     console.log("WW")
-    cartAPI.push(showInCart);
+    // cartAPI.push(showInCart);
     localStorage.setItem("cartAPI", JSON.stringify(cartAPI))
 
-    counter.innerHTML = cartAPI.length;
+    // counter.innerHTML = cartAPI.length;
   }
 });
