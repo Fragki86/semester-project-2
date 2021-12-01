@@ -1,21 +1,3 @@
-// .navbar {
-//   background-color: #fefefe;
-//   filter: drop-shadow(0 0 8px map-get($colours, "secondary"));
-//   margin-bottom: 10px;
-// }
-
-// .navbar-toggler {
-//   border: none;
-//   margin-top: 40px;
-// }
-
-// .nav-link {
-//   font-family: $titles;
-//   font-size: 2rem;
-//   color: map-get($colours, "primary");
-// }
-
-
 nav {
   position: relative;
   height: 140px;
@@ -103,16 +85,22 @@ nav {
   }
 
   & #counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: -10px;
     right: -5px;
-    border: 1px solid map-get($colours, "primary");
+    border: 1px solid map-get($colours, "secondary");
     border-radius: 50%;
     height: 22px;
     width: 22px;
-    background-color: #fff;
+    line-height: 22px;
+    background-color: map-get($colours, "secondary");
+    color: #fff;
     text-align: center;
     font-weight: 600;
+    font-size: 1rem;
     z-index: 1;
   }
 }
@@ -241,6 +229,8 @@ nav {
       // border-radius: 50%;
       height: 27px;
       width: 27px;
+      font-size: 1.1rem;
+      
       // background-color: #fff;
       // text-align: center;
       // font-weight: 600;

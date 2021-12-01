@@ -24,11 +24,43 @@
     margin-right: 20px;
     color: map-get($colours, "secondary")
   }
+
+  & .card-price {
+    font-size: 1.1rem;
+  }
 }
 
 .total-amount {
   display: flex;
+  width: 50%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
 
-  
+  & h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    margin-right: 10px;
+    text-decoration: underline;
+  }
+
+  & p {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+  }
+
 }
 
+@media only screen and (min-width: 900px) {
+  .cart-item {
+    & h3 {
+      font-size: 1.2rem;
+    }
+  }
+
+  .total-amount {
+    & h4 {
+      font-size: 1.2rem;
+    }
+  }
+}

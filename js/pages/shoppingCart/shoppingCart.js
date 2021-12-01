@@ -10,6 +10,8 @@ counter();
 const getCart = JSON.parse(localStorage.getItem("Items In Cart"));
 const cartList = document.querySelector(".cart-list");
 const totalAmount = document.querySelector(".total-amount");
+const clearBtn = document.querySelector("#clearCartBtn");
+const counterHtml = document.querySelector("#counter");
 let sum = 0;
 
 cartList.innerHTML = "";
@@ -35,10 +37,17 @@ function shoppingCartList() {
                           </div>
                           <div class="separator"></div>`
 
-    totalAmount.innerHTML = `<h4>Total:</h4> <p>${sum}</p>$`
+    totalAmount.innerHTML = `<h4>Total:</h4><p class="card-price">${sum}$</p>`
   }
-
-
-
 }
 shoppingCartList();
+
+clearBtn.addEventListener("click", clearStorage);
+
+  function clearStorage() {
+    localStorage.removeItem("Items In Cart");
+    cartList.innerHTML = "";
+    totalAmount.innerHTML = "";
+    counterHtml.innerHTML = "0";
+    clearBtn.style.display = "none";
+  }

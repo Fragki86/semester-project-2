@@ -8,15 +8,53 @@ h5 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 0;
   color: map-get($colours, "text")
 }
 
-h5 {
+h3 {
+  font-size: 1.1rem;
+}
+
+h4 {
   font-size: 1.3rem;
+}
+
+h5 {
+  font-size: 1.2rem;
 }
 
 a {
   text-decoration: none;
+}
+
+p {
+  font-size: .9rem;
+}
+
+@media only screen and (min-width: 900px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+  }
+  
+  h4 {
+    font-size: 1.5rem;
+  }
+  
+  h5 {
+    font-size: 1.1rem;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
 }

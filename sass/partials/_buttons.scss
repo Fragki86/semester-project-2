@@ -11,3 +11,9 @@
 .button-styles:hover {
   box-shadow: 0 0 8px map-get($colours, "text");
 }
+
+#clearCartBtn {
+  background-color: map-get($colours, "primary");
+  border: 1px solid map-get($colours, "text");
+  width: 200px;
+}

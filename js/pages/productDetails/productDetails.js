@@ -45,6 +45,11 @@ getDetails().then(() => {
 
   function addProduct() {
     getShowedItem.push(showInCart);
-    localStorage.setItem("Items In Cart", JSON.stringify(getShowedItem))
+    localStorage.setItem("Items In Cart", JSON.stringify(getShowedItem));
+
+    const counter = document.querySelector("#counter");
+    const cartLength = JSON.parse(localStorage.getItem("Items In Cart"))
+    
+    counter.innerHTML = cartLength.length;
   }
 });
