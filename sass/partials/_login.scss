@@ -1,0 +1,58 @@
+#login {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  transform: translate(-50%, -30%);
+  box-shadow: 0 0 15px map-get($colours, "text");
+  border-radius: 10px;
+
+  & img {
+    width: 220px;
+    margin: 10px auto;
+  }
+}
+
+.log-in-form {
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & input {
+    margin: 10px;
+    height: 30px;
+    border: 0;
+    box-shadow: 0 0 2px map-get($colours, "text");
+    border-radius: 3px;
+  }
+
+  & button {
+    background-color: map-get($colours, "primary");
+    width: 70%;
+    margin-top: 20px;
+  }
+}
+
+
+@media only screen and (min-width: 900px) {
+  #login {
+    width: 500px;
+  }
+
+  .log-in-form {
+    & input {
+      width: 80%;
+      height: 35px;
+    }
+
+    & button {
+      width: 50%;
+    }
+  }
+}

@@ -22,9 +22,9 @@ nav {
     right: 0;
     top: 141px;
     width: 100%;
-    height: 200px;
+    height: 400px;
     justify-content: space-evenly;
-    background-color: #fff;
+    background-color: #fefefe;
     transform: translateX(110%);
     transition: transform 0.4s ease-in;
   }
@@ -32,6 +32,7 @@ nav {
   & li {
     list-style: none;
     opacity: 1;
+    font-size: 1.1rem;
   }
 
   & a {
@@ -126,6 +127,36 @@ nav {
 }
 
 
+#navbarDropdown {
+  color: map-get($colours, "primary");
+  border-top: 2px solid map-get($colours, "secondary");
+  padding-top: 30px;
+  font-weight: bold;
+  font-size: 1.5rem;
+
+  & i {
+        margin-left: 10px;
+        color: map-get($colours, "secondary");
+      }
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu {
+  height: 100px;
+  transition: none;
+
+  & a {
+    font-size: 1.3rem;
+    color: map-get($colours, "primary");
+  }
+}
+
+
+
+
 @media only screen and (min-width: 900px) {
   #burgerBtn {
     display: none;
@@ -134,55 +165,42 @@ nav {
   
   nav {
     position: relative;
-    // top: 0;
     height: 140px;
-    // margin: 0px auto;
     display: grid;
     grid-template-columns: 30% 50% 10% 10%;
     grid-template-rows: 1% 99%;
-    // justify-items: center;
     align-items: center;
-    // z-index: 2;
   
     & ul {
       position: relative;
-      // padding: 0;
       margin: 20px 0px 0px 25px;
       display: flex;
       flex-direction: row;
-      // align-items: center;
       grid-column: 2;
       grid-row: 2;
-      // right: 0;
-      // top: 0;
       width: 100%;
       height: 0px;
       top: 0px;
-      // min-height: 200px;
       justify-content: flex-start;
       background-color: none;
       transform: translateX(0%);
     }
   
     & li {
-      // list-style: none;
       margin: 15px;
       padding: 3px;
       border: 1px dashed #fefefe;
-      padding: 3px;
       transition: border .6s;
     }
 
-    & li:hover {
+    & li:not(#navbarDropdown):hover {
       border: 1px dashed map-get($colours, "secondary");
       padding: 3px;
       color: map-get($colours, "secondary");
     }
   
     & a {
-      // text-decoration: none;
       font-size: 1.2rem;
-      // color: map-get($colours, "secondary");
     }
 
     & a:hover {
@@ -190,8 +208,16 @@ nav {
     }
   }
 
+  .active {
+    border: 1px dashed map-get($colours, "secondary");
+    padding: 3px;
+
+    // &:hover {
+    //   border: 0;
+    // }
+  }
+
   #logo {
-    // display: block;
     grid-column: 1;
     grid-row: 2;
     width: 55%;
@@ -204,37 +230,23 @@ nav {
   }
 
   #cart {
-    // position: relative;
-    // border: 1px solid (map-get($colours, "secondary"));
     margin-right: 40px;
     grid-column: 4;
     grid-row: 2;
-    // border-radius: 50%;
     padding: 15px;
     height: 60px;
     width: 60px;
   
     & i {
       font-size: 1.6rem;
-      // color: map-get($colours, "primary");
-      // text-align: center;
-      // display: block;
     }
   
     & #counter {
-      // position: absolute;
       top: -10px;
       right: -5px;
-      // border: 1px solid map-get($colours, "primary");
-      // border-radius: 50%;
       height: 27px;
       width: 27px;
       font-size: 1.1rem;
-      
-      // background-color: #fff;
-      // text-align: center;
-      // font-weight: 600;
-      // z-index: 1;
     }
   }
 
@@ -254,4 +266,37 @@ nav {
       display: block;
     }
   }
+
+  #navbarDropdown {
+    color: map-get($colours, "primary");
+    border-top: 0;
+    padding: 3px;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  #navbarDropdown::before {
+      content: "";
+      border: 1px solid map-get($colours, "secondary");
+      margin-right: 30px;
+      padding: 20px 0;
+    }
+
+  .dropdown-menu {
+    height: 150px;
+    width: 250px;
+    border: 1px solid map-get($colours, "secondary");
+
+    & a {
+      font-size: 1.1rem;
+      color: map-get($colours, "primary");
+    }
+
+    & a:hover {
+      color: map-get($colours, "primary");
+      font-weight: bold;
+      border: none;
+    }
+  }
+
 }

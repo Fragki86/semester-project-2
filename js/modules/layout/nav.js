@@ -1,5 +1,28 @@
+import { getUser } from "../../localStorage/tokenUser.js";
+
+
 export function nav() {
   const navMenu = document.querySelector(".nav-menu");
+  const { pathname } = document.location;
+  
+  const username = getUser();
+
+  console.log(username)
+  let authorisationLink = `<a href="login.html" id="loggedUser">Login</a>`
+  let adminLinks = "";
+
+  if (username) {
+    authorisationLink = `<span>Hi, ${username}</span>`
+    adminLinks = `<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Admin Panel<i class="fas fa-chevron-circle-down"></i>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item" href="add-product.html">Add Item</a></li>
+      <li><a class="dropdown-item" href="edit-product.html">Edit / Delete Item</a></li>
+    </ul>
+  </li>`
+  }
 
   navMenu.innerHTML = `
                 <nav>
@@ -15,18 +38,21 @@ export function nav() {
                     </div>
                     <ul class="nav-list">
                       <li class="nav-links">
-                        <a href="index.html">Home</a>
+                        <a href="index.html" class="${pathname === "/index.html" ? "active" : ""}">Home</a>
                       </li>
                       <li class="nav-links">
-                        <a href="products.html">Products</a>
+                        <a href="products.html" class="${pathname === "/products.html" ? "active" : ""}">Products</a>
                       </li>
+                      ${adminLinks}
+                      
                     </ul>
                     <div class="login-container">
                       <a href="login.html"><i class="fas fa-user"></i></a>
-                      <a href="login.html" id="loggedUser">Login</a>
+                      ${authorisationLink}
                     </div>
                 </nav>
                 `
+
 
 
 const burgerBtn = document.querySelector("#burgerBtn");
