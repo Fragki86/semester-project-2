@@ -42,6 +42,19 @@ nav {
   }
 }
 
+.greeting-span {
+  font-size: 1rem;
+  color: map-get($colours, "secondary");
+  font-family: $titles;
+
+  & i {
+    margin-left: 10px;
+    color: map-get($colours, "primary");
+    cursor: pointer;
+  }
+}
+
+
 .nav-visible {
   transform: translateX(0%);
 }
@@ -126,6 +139,9 @@ nav {
   }
 }
 
+.nav-separator {
+  display: none;
+}
 
 #navbarDropdown {
   color: map-get($colours, "primary");
@@ -137,7 +153,7 @@ nav {
   & i {
         margin-left: 10px;
         color: map-get($colours, "secondary");
-      }
+  }
 }
 
 .dropdown-toggle::after {
@@ -167,7 +183,7 @@ nav {
     position: relative;
     height: 140px;
     display: grid;
-    grid-template-columns: 30% 50% 10% 10%;
+    grid-template-columns: 20% 50% 20% 10%;
     grid-template-rows: 1% 99%;
     align-items: center;
   
@@ -176,6 +192,7 @@ nav {
       margin: 20px 0px 0px 25px;
       display: flex;
       flex-direction: row;
+      justify-self: end;
       grid-column: 2;
       grid-row: 2;
       width: 100%;
@@ -220,7 +237,7 @@ nav {
   #logo {
     grid-column: 1;
     grid-row: 2;
-    width: 55%;
+    width: 80%;
     margin: 0px auto;
     align-self: center;
   
@@ -256,6 +273,8 @@ nav {
     padding-top: 20px;
     grid-column: 3;
     grid-row: 2;
+    align-items: center;
+    justify-self: end;
   
     & i {
       font-size: 1.4rem;
@@ -267,6 +286,12 @@ nav {
     }
   }
 
+  .nav-separator {
+    display: block;
+    border: 1px solid map-get($colours, "secondary");
+    padding: 30px 0;
+  }
+
   #navbarDropdown {
     color: map-get($colours, "primary");
     border-top: 0;
@@ -275,12 +300,6 @@ nav {
     font-size: 1.2rem;
   }
   
-  #navbarDropdown::before {
-      content: "";
-      border: 1px solid map-get($colours, "secondary");
-      margin-right: 30px;
-      padding: 20px 0;
-    }
 
   .dropdown-menu {
     height: 150px;
