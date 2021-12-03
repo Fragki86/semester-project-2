@@ -925,7 +925,7 @@ p {
   background-color: #2f5f5f;
   color: #fff;
   font-family: "century-gothic", sans-serif;
-  border-radius: 8px;
+  border-radius: 5px;
   border: none;
   height: 2.3rem;
   -webkit-transition: -webkit-box-shadow .2s;
@@ -1161,5 +1161,52 @@ p {
   font-family: "century-gothic", sans-serif;
   font-size: 1.1rem;
   color: #402F28;
+  font-weight: bold;
+}
+
+.form-body input {
+  border: 1px solid #402F28;
+  border-radius: 5px;
+}
+
+.form-body textarea {
+  height: 200px;
+  resize: none;
+  font-family: "Lato", sans-serif;
+  border: 1px solid #402F28;
+  border-radius: 5px;
+}
+
+.form-body .radio-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-body .radio-buttons span {
+  margin-left: 5px;
+  margin-right: 30px;
+}
+
+#addProductBtn {
+  display: block;
+  width: 40%;
+  margin: 40px auto 0 auto;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@media only screen and (min-width: 900px) {
+  #addProductForm {
+    width: 700px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

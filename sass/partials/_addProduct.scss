@@ -28,6 +28,46 @@
     font-family: $titles;
     font-size: 1.1rem;
     color: map-get($colours, "text");
+    font-weight: bold;
+  }
+
+  & input {
+    border: 1px solid map-get($colours, "text");
+    border-radius: 5px;
+  }
+
+  & textarea {
+    height: 200px;
+    resize: none;
+    font-family: $paragraphs3;
+    border: 1px solid map-get($colours, "text");
+    border-radius: 5px;
+  }
+
+  & .radio-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & span {
+      margin-left: 5px;
+      margin-right: 30px;
+    }
+  }
+}
+
+#addProductBtn {
+  display: block;
+  width: 40%;
+  margin: 40px auto 0 auto;
+  align-self: center;
+}
+
+
+
+@media only screen and (min-width: 900px) {
+  #addProductForm {
+    width: 700px;
   }
 
 
