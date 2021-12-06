@@ -1,3 +1,9 @@
+.empty-cart-message {
+  font-family: $paragraphs3;
+  margin-top: 20px;
+}
+
+
 .cart-item {
   width: 90%;
   display: grid;
@@ -59,8 +65,11 @@
   }
 
   .total-amount {
+    margin-top: -20px;
+
     & h4 {
       font-size: 1.2rem;
+      
     }
   }
 }

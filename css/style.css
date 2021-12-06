@@ -940,9 +940,16 @@ p {
 }
 
 #clearCartBtn {
+  display: none;
   background-color: #9F4f4f;
   border: 1px solid #402F28;
   width: 200px;
+  margin: 40px auto;
+}
+
+.empty-cart-message {
+  font-family: "Lato", sans-serif;
+  margin-top: 20px;
 }
 
 .cart-item {
@@ -1009,6 +1016,9 @@ p {
 @media only screen and (min-width: 900px) {
   .cart-item h3 {
     font-size: 1.2rem;
+  }
+  .total-amount {
+    margin-top: -20px;
   }
   .total-amount h4 {
     font-size: 1.2rem;
