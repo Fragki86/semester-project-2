@@ -17,6 +17,7 @@
   <main>
     <section id="addProduct">
       <form id="addProductForm">
+        <div class="message-container"></div>
         <div class="form-title">
           <h2>Add Product</h2>
           <img src="images/title-line.svg" class="title-custom-line">
@@ -29,7 +30,7 @@
           </div>
           <div>
             <label for="price">Price</label>
-            <input type="text" id="priceInput" name="priceInput">
+            <input type="number" step=".01" id="priceInput" name="priceInput">
             <!-- <div class="form-error" id="priceInputError"></div> -->
           </div>
           <div>
@@ -40,8 +41,8 @@
           <div>
             <label for="featured">Featured</label>
             <div class="radio-buttons">
-              <input type="radio" id="yesInput" name="featuredInput"><span>Yes</span>
-              <input type="radio" id="noInput" name="featuredInput"><span>No</span>
+              <input type="radio" id="yesInput" name="featured" value="yes"><span>Yes</span>
+              <input type="radio" id="noInput" name="featured" value="no"><span>No</span>
             </div>
             <!-- <div class="form-error" id="tfeaturedInputError"></div> -->
           </div>
