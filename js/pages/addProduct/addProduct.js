@@ -25,28 +25,34 @@ function validateForm(event) {
   const titleValue = title.value.trim();
   const priceValue = price.value.trim();
   const descriptionValue = description.value.trim();
+  let featuredBoolean = "";
   // const featuredValue = featured.value;
   
-  if (featuredValue === "no") {
-    console.log("correct")
-  } else {
-    console.log("error")
+  // const featuredConvert = (featuredValue === "true")
+  
+  // console.log(featuredValue)
+  if (featuredValue === "yes") {
+    featuredBoolean = "true";
+    // console.log(featured)
+  } else if (featuredValue === "no") {
+    featuredBoolean = "false";
+    // console.log(featured)
   }
-  // console.log(event)
+  console.log(featuredBoolean)
 
   // if (titleValue.length < 3 || priceValue < 1 || descriptionValue.length < 8) {
   //   return systemMessage("error", "All fields required", ".message-container")
   // }
 
 
-  addProduct(titleValue, priceValue, descriptionValue, featuredValue)
+  newProduct(titleValue, priceValue, descriptionValue, featuredBoolean)
 }
 
 
-async function addProduct(title, price, description, ) {
+async function newProduct(title, price, description, featured) {
   const newUrl = api + "/products";
   const token = getToken();
-  const data = JSON.stringify({title: title, price: price, description: description,});
+  const data = JSON.stringify({title: title, price: price, description: description, featured: featured});
   const options = {
     method: "POST",
     body: data,
@@ -60,7 +66,10 @@ async function addProduct(title, price, description, ) {
     const response = await fetch(newUrl, options);
     const results = await response.json();
 
-    console.log(results);
+    // if (results.created_at) {
+    //   addProductForm.reset();
+    // }
+    // console.log(results);
 
   } catch(error) {
     systemMessage("warning", "Something went wrong", ".message-container");

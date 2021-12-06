@@ -28,7 +28,7 @@ function shoppingCartList() {
     console.log(sum)
 
     cartList.innerHTML += `<div class="cart-item">
-                            <img src="${api}${getCart[i].image[0].url}">
+                            <img src="${api}${getCart[i].image_url}">
                             <h3>${getCart[i].title}</h3>
                             <p class="card-price">${getCart[i].price}$</p>
                             <a href="productDetails.html?id=${getCart[i].id}">

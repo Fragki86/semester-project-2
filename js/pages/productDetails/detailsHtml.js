@@ -10,7 +10,9 @@ export function detailsHtml(results) {
   const title = results.title;
   const price = results.price;
   const description = results.description;
-  const image = results.image[0].url;
+  // const image = results.image[0].url;
+  const image = results.image_url;
+
   const id = results.id;
 
   document.title = results.title;

@@ -5,8 +5,8 @@ export function createProductsHtml(results) {
   productsContainer.innerHTML = "";
 
   for (let i = 0; i < results.length; i++) {
-
-    const image = results[i].image[0].url;
+    
+    const image = results[i].image_url;
     const title = results[i].title;
     const price = results[i].price;
     const productId = results[i].id;
