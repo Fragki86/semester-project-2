@@ -21,32 +21,32 @@ addProductForm.addEventListener("submit", validateForm)
 
 function validateForm(event) {
   event.preventDefault();
-  let featuredValue = document.querySelector('input[name="featured"]:checked').value;
+  const featuredValue = document.querySelector('input[name="featured"]:checked').value;
   const titleValue = title.value.trim();
   const priceValue = price.value.trim();
   const descriptionValue = description.value.trim();
-  // let featuredValue = featured.value;
-  // alert(featuredValue);
-  // if (featured === "no") {
-  //   console.log("correct")
-  // } else {
-  //   console.log("error")
-  // }
+  // const featuredValue = featured.value;
+  
+  if (featuredValue === "no") {
+    console.log("correct")
+  } else {
+    console.log("error")
+  }
   // console.log(event)
 
-  if (titleValue.length < 3 || priceValue < 1 || descriptionValue.length < 8) {
-    return systemMessage("error", "All fields required", ".message-container")
-  }
+  // if (titleValue.length < 3 || priceValue < 1 || descriptionValue.length < 8) {
+  //   return systemMessage("error", "All fields required", ".message-container")
+  // }
 
 
   addProduct(titleValue, priceValue, descriptionValue, featuredValue)
 }
 
 
-async function addProduct(title, price, description, featured) {
+async function addProduct(title, price, description, ) {
   const newUrl = api + "/products";
   const token = getToken();
-  const data = JSON.stringify({title: title, price: price, description: description, featured: featured});
+  const data = JSON.stringify({title: title, price: price, description: description,});
   const options = {
     method: "POST",
     body: data,
