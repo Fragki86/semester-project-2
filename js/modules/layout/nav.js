@@ -23,7 +23,7 @@ export function nav() {
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
       <li><a class="dropdown-item" href="add-product.html">Add Item</a></li>
-      <li><a class="dropdown-item" href="edit-product.html">Edit / Delete Item</a></li>
+      <li><a class="dropdown-item" href="products.html">Edit / Delete Item</a></li>
     </ul>
   </li>`
   }

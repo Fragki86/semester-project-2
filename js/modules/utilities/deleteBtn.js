@@ -1,5 +1,5 @@
 import { api } from "./api.js";
-import { getToken } from "../../localStorage/tokenUser/getToken.js";
+import { getToken } from "../../localStorage/tokenUser.js";
 
 
 // Deleting Items from the editing page
