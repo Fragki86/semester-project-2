@@ -19,7 +19,7 @@ export function detailsHtml(results) {
   let editLink = "";
 
   if (username) {
-    editLink = `<a href="edit-product.html?id=${id}">Edit <i class="far fa-edit"></i></a>`
+    editLink = `<a href="edit-product.html?id=${id}" class="edit-link">Edit <i class="far fa-edit"></i></a>`
   }
 
 

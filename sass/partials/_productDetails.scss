@@ -36,6 +36,18 @@
   margin-top: 1.7rem;
 }
 
+.edit-link {
+  color: #fff;
+  background-color: map-get($colours, "primary");;
+  border: 1px solid map-get($colours, "secondary");
+  width: 30%;
+  justify-self: center;
+  margin-top: 30px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 
 
 @media only screen and (min-width: 900px) {
@@ -75,7 +87,17 @@
   }
 
   
+  .edit-link {
+    width: 20%;
+    margin-top: 0px;
+    padding: 5px;
+    transition: box-shadow .2s;
 
+    &:hover {
+      box-shadow: 0 0 8px map-get($colours, "text");
+      color: #fff;
+    }
+  }
   
 
   

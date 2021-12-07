@@ -876,6 +876,19 @@ p {
   margin-top: 1.7rem;
 }
 
+.edit-link {
+  color: #fff;
+  background-color: #9F4f4f;
+  border: 1px solid #2f5f5f;
+  width: 30%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-top: 30px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 @media only screen and (min-width: 900px) {
   .product-details-container {
     -ms-grid-columns: 50% 50%;
@@ -918,6 +931,20 @@ p {
     grid-row: 4;
     width: 300px;
     margin: 0px auto;
+  }
+  .edit-link {
+    width: 20%;
+    margin-top: 0px;
+    padding: 5px;
+    -webkit-transition: -webkit-box-shadow .2s;
+    transition: -webkit-box-shadow .2s;
+    transition: box-shadow .2s;
+    transition: box-shadow .2s, -webkit-box-shadow .2s;
+  }
+  .edit-link:hover {
+    -webkit-box-shadow: 0 0 8px #402F28;
+            box-shadow: 0 0 8px #402F28;
+    color: #fff;
   }
 }
 
