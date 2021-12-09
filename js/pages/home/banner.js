@@ -2,10 +2,10 @@ import { api } from "../../modules/utilities/api.js"
 
 export function banner() {
   const bannerContainer = document.querySelector("#bannerContainer");
-  const bannerUrl = "/uploads/banner_img_d1df18f497.jpg";
+  const bannerUrl = "https://res.cloudinary.com/home2222/image/upload/v1639084937/banner_img_4102055563.jpg";
   
   bannerContainer.innerHTML = `<div class="banner">
-                                <img src="${api}${bannerUrl}" class="banner-img">
+                                <img src="${bannerUrl}" class="banner-img" alt="Child play with his father">
                                 <div class="banner-title">
                                   <h2 class="banner-title-over">Rer deu</h2>
                                   <div class="separator"></div>
