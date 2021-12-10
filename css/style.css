@@ -582,6 +582,10 @@ nav a {
   border-radius: 5px;
   -webkit-box-shadow: 0 0 10px #2f5f5f;
           box-shadow: 0 0 10px #2f5f5f;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
 }
 
 .card img {
@@ -824,6 +828,23 @@ p {
   gap: 20px;
 }
 
+.edit-icon {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 1.3rem;
+  color: #2f5f5f;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.edit-icon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: #2f5f5f;
+}
+
 @media only screen and (min-width: 900px) {
   #searchForm {
     width: 40%;
@@ -835,6 +856,10 @@ p {
         grid-template-columns: repeat(4, 1fr);
     width: 80%;
     margin-top: 50px;
+  }
+  .card:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 
@@ -955,15 +980,17 @@ p {
   border-radius: 5px;
   border: none;
   height: 2.3rem;
-  -webkit-transition: -webkit-box-shadow .2s;
-  transition: -webkit-box-shadow .2s;
-  transition: box-shadow .2s;
-  transition: box-shadow .2s, -webkit-box-shadow .2s;
+  -webkit-transition: -webkit-box-shadow .2s, -webkit-transform .2s;
+  transition: -webkit-box-shadow .2s, -webkit-transform .2s;
+  transition: box-shadow .2s, transform .2s;
+  transition: box-shadow .2s, transform .2s, -webkit-box-shadow .2s, -webkit-transform .2s;
 }
 
 .button-styles:hover {
   -webkit-box-shadow: 0 0 8px #402F28;
           box-shadow: 0 0 8px #402F28;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 #clearCartBtn {
@@ -974,9 +1001,36 @@ p {
   margin: 40px auto;
 }
 
+#edit-form-btn-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 200px;
+  margin: 30px auto;
+}
+
+#edit-form-btn-group button {
+  margin: 15px auto;
+  width: 100%;
+  height: 50px;
+}
+
+#edit-form-btn-group #saveBtn {
+  width: 100%;
+}
+
+#edit-form-btn-group #deleteBtn {
+  background-color: #da4d51;
+}
+
 .empty-cart-message {
   font-family: "Lato", sans-serif;
-  margin-top: 20px;
+  margin: 200px auto;
+  font-size: 1.8rem;
 }
 
 .cart-item {
@@ -1176,6 +1230,11 @@ p {
           flex-direction: column;
 }
 
+#addProductForm .message-container {
+  width: 70%;
+  margin: 0px auto;
+}
+
 .form-body {
   width: 80%;
   margin: 10px auto;
@@ -1196,7 +1255,7 @@ p {
   margin-bottom: 5px;
   text-decoration: underline;
   font-family: "century-gothic", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #402F28;
   font-weight: bold;
 }
@@ -1204,6 +1263,7 @@ p {
 .form-body input {
   border: 1px solid #402F28;
   border-radius: 5px;
+  height: 30px;
 }
 
 .form-body textarea {

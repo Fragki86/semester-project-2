@@ -10,11 +10,10 @@ export function detailsHtml(results) {
   const title = results.title;
   const price = results.price;
   const description = results.description;
-  // const image = results.image[0].url;
   const image = results.image_url;
   const id = results.id;
-
-  
+  const alt = results.alternative_text
+ 
 
   let editLink = "";
 
@@ -29,7 +28,7 @@ export function detailsHtml(results) {
                                 <img src="images/title-line.svg" class="title-custom-line">
                               </div>
                               <div class="details-image">
-                                <img src="${api}${image}" alt="">
+                                <img src="${image}" alt="${alt}">
                               </div>
 
                                 <p class="description">${description}</p>

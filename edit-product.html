@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
   <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
   <link href="css/style.css" rel="stylesheet">
-  <title>Add Product</title>
+  <title>Edit Product</title>
 </head>
 <body>
   <header>
@@ -47,12 +47,17 @@
               <input type="file" id="imageInput" name="imageInput">
           </div>
           <div>
+            <label for="alt-text">Alt-text for image</label>
+              <input type="text" id="altInput" name="altInput">
+          </div>
+          <div>
               <input type="hidden" id="productId">
           </div>
         </div>
-        
-        <button type="submit" id="saveBtn" class="button-styles">Save</button>
-        <button type="button" id="deleteBtn" class="button-styles">Delete Product</button>
+        <div id="edit-form-btn-group">
+          <button type="submit" id="saveBtn" class="button-styles">Update</button>
+          <button type="button" id="deleteBtn" class="button-styles">Delete Product</button>
+        </div>
       </form>
     </section>
   </main>

@@ -9,6 +9,11 @@
     display: flex;
     flex-direction: column;
   }
+
+  & .message-container {
+    width: 70%;
+    margin: 0px auto;
+  }
 }
 
 
@@ -26,7 +31,7 @@
     margin-bottom: 5px;
     text-decoration: underline;
     font-family: $titles;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: map-get($colours, "text");
     font-weight: bold;
   }
@@ -34,6 +39,7 @@
   & input {
     border: 1px solid map-get($colours, "text");
     border-radius: 5px;
+    height: 30px;
   }
 
   & textarea {
@@ -62,6 +68,7 @@
   margin: 40px auto 0 auto;
   align-self: center;
 }
+
 
 
 

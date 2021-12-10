@@ -4,6 +4,7 @@ import { counter } from "../../modules/utilities/counter.js";
 import { api } from "../../modules/utilities/api.js";
 import { getToken } from "../../localStorage/tokenUser.js";
 import { deleteBtn } from "../../modules/utilities/deleteBtn.js"
+import { systemMessage } from "../../modules/utilities/systemMessage.js";
 
 
 nav();
@@ -26,6 +27,7 @@ const editForm = document.querySelector("#editProductForm");
 const title = document.querySelector("#titleInput");
 const price = document.querySelector("#priceInput");
 const description = document.querySelector("#descriptionInput");
+const alt = document.querySelector("#altInput");
 const image = document.querySelector("#imageInput");
 const productId = document.querySelector("#productId");
 const featuredYes = document.querySelector('input[value="yes"]');
@@ -41,6 +43,8 @@ async function getApi() {
     price.value = results.price;
     description.value = results.description;
     productId.value = results.id;
+    alt.value = results.alternative_text;
+
     const featuredBoolean = results.featured;
 
 
@@ -68,6 +72,7 @@ function formConditions(event) {
   const titleValue = title.value.trim();
   const priceValue = price.value.trim();
   const descriptionValue = description.value.trim();
+  const altValue = alt.value.trim();
   const idValue = productId.value;
 
   if (titleValue.length === 0 || priceValue.length === 0 || descriptionValue.length === 0) {
@@ -84,14 +89,14 @@ function formConditions(event) {
   
   // console.log(featuredBooleanUpdate)
   
-  updateArticle(titleValue, priceValue, descriptionValue, idValue, featuredBooleanUpdate);
+  updateArticle(titleValue, priceValue, descriptionValue, idValue, featuredBooleanUpdate, altValue);
 }
 
 
-async function updateArticle(title, price, description, id, featured) {
+async function updateArticle(title, price, description, id, featured, alt) {
   const updateUrl = api + "/products/" + id;
   const token = getToken();
-  const data = JSON.stringify({title: title, price: price, description: description, featured: featured})
+  const data = JSON.stringify({title: title, price: price, description: description, featured: featured, alternative_text: alt})
 
   const options = {
     method: "PUT",
@@ -106,11 +111,13 @@ async function updateArticle(title, price, description, id, featured) {
     const response = await fetch(updateUrl, options);
     const results = await response.json();
 
+    systemMessage("success", "Product updated successfuly", ".message-container")
     console.log(results)
 
 
 
   } catch(error) {
+    systemMessage("error", error, ".message-container")
     console.log(error)
   }
 

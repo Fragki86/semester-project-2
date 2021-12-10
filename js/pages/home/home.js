@@ -22,7 +22,6 @@ async function getApi() {
 
     const bannerResponse = await fetch(bannerApi);
     const bannerResults = await bannerResponse.json();
-    // console.log(bannerResults.hero_banner_alt_text)
     
     banner(bannerResults);
     newProducts(results);

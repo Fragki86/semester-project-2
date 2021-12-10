@@ -29,6 +29,7 @@
   margin: 10px auto;
   border-radius: 5px;
   box-shadow: 0 0 10px map-get($colours, "secondary");
+  transition: transform .3s;
 }
 
 .card img {

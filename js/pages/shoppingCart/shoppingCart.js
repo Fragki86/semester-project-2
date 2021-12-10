@@ -1,8 +1,6 @@
 import { nav } from "../../modules/layout/nav.js";
 import { footer } from "../../modules/layout/footer.js";
 import { counter } from "../../modules/utilities/counter.js";
-import { api } from "../../modules/utilities/api.js"
-import { systemMessage } from "../../modules/utilities/systemMessage.js";
 
 nav();
 footer();
@@ -17,8 +15,6 @@ const counterHtml = document.querySelector("#counter");
 let sum = 0;
 
 
-// cartList.innerHTML = `Your shopping list is empty`;
-
 
 function shoppingCartList() {
   
@@ -32,10 +28,10 @@ function shoppingCartList() {
     if (!isNaN(totalCost)) {
       sum += totalCost;
     }
-
+    
 
     cartList.innerHTML += `<div class="cart-item">
-                            <img src="${api}${getCart[i].image_url}">
+                            <img src="${getCart[i].image_url}" alt="${getCart[i].alternative_text}">
                             <h3>${getCart[i].title}</h3>
                             <p class="card-price">${getCart[i].price}$</p>
                             <a href="productDetails.html?id=${getCart[i].id}">
