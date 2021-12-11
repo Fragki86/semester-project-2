@@ -28,8 +28,7 @@
 .card {
   margin: 10px auto;
   border-radius: 5px;
-  box-shadow: 0 0 10px map-get($colours, "secondary");
-  transition: transform .3s;
+  box-shadow: 0 0 5px map-get($colours, "secondary");
 }
 
 .card img {
@@ -152,6 +151,11 @@
     }
   }
 
+  /* Carousel */
+  .card {
+    box-shadow: 0 0 20px map-get($colours, "secondary");
+    transition: transform .3s;
+  }
 
   /* Age Cubes */
   .age-cubes-grid {

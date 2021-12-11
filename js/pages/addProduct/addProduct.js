@@ -15,10 +15,11 @@ const title = document.querySelector("#titleInput");
 const price = document.querySelector("#priceInput");
 const description = document.querySelector("#descriptionInput");
 const alt = document.querySelector("#altInput");
-const image = document.querySelector("#imageInput");
+const imageUploadBtn = document.querySelector("#imageUploadBtn");
+const imageURL = document.querySelector("#imageURL");
 
 
-image.addEventListener("click", openWidget);
+imageUploadBtn.addEventListener("click", openWidget);
 
 function openWidget() {
   widgetUpload.open();
@@ -26,14 +27,12 @@ function openWidget() {
 
 const widgetUpload = cloudinary.createUploadWidget({ 
   cloudName: "home2222", 
-  uploadPreset: "myuploadspreset" }, (error, result) => {
-    if (!error && result && result.event === "success") {
-      console.log('Done! Here is the image info: ', result.info); 
+  uploadPreset: "myuploadspreset" }, (error, imgInfo) => {
+    if (!error && imgInfo && imgInfo.event === "success") {
+      console.log('Done! Here is the image info: ', imgInfo.info.url); 
+      imageURL.value = `${imgInfo.info.url}`;
   };
 });
-
-
-
 
 
 
@@ -47,13 +46,14 @@ function validateForm(event) {
   const priceValue = price.value.trim();
   const descriptionValue = description.value.trim();
   const altValue = alt.value.trim();
+  const newImageUrlValue = imageURL.value.trim();
 
 
 
 
   let featuredBoolean = "";
   
-  if (titleValue.length < 3 || priceValue < 1 || descriptionValue.length < 8 || alt.length < 3) {
+  if (titleValue.length < 3 || priceValue < 1 || descriptionValue.length < 8 || alt.length < 3 || imageURL.length < 5) {
     return systemMessage("error", "All fields required", ".message-container")
   }
   
@@ -67,14 +67,14 @@ function validateForm(event) {
 
 
 
-  newProduct(titleValue, priceValue, descriptionValue, featuredBoolean, altValue)
+  newProduct(titleValue, priceValue, descriptionValue, featuredBoolean, altValue, newImageUrlValue)
 }
 
 
-async function newProduct(title, price, description, featured, alt) {
+async function newProduct(title, price, description, featured, alt, image_url) {
   const newUrl = api + "/products";
   const token = getToken();
-  const data = JSON.stringify({title: title, price: price, description: description, featured: featured, alternative_text: alt});
+  const data = JSON.stringify({title: title, price: price, description: description, featured: featured, alternative_text: alt, image_url: image_url});
   const options = {
     method: "POST",
     body: data,

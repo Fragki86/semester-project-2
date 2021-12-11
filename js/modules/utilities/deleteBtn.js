@@ -25,7 +25,7 @@ export function deleteBtn(id) {
         const response = await fetch(newUrl, options);
         const results = await response.json();
 
-        location.href = "/";
+        location.href = "products.html";
 
 
       } catch(error) {

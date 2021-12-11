@@ -28,7 +28,8 @@ const title = document.querySelector("#titleInput");
 const price = document.querySelector("#priceInput");
 const description = document.querySelector("#descriptionInput");
 const alt = document.querySelector("#altInput");
-const image = document.querySelector("#imageInput");
+const imageURL = document.querySelector("#imageURL");
+const imageUploadBtn = document.querySelector("#imageUploadBtn");
 const productId = document.querySelector("#productId");
 const featuredYes = document.querySelector('input[value="yes"]');
 const featuredNo = document.querySelector('input[id="noInput"]');
@@ -44,6 +45,7 @@ async function getApi() {
     description.value = results.description;
     productId.value = results.id;
     alt.value = results.alternative_text;
+    imageURL.value = results.image_url;
 
     const featuredBoolean = results.featured;
 
@@ -63,6 +65,22 @@ async function getApi() {
 getApi()
 
 
+imageUploadBtn.addEventListener("click", openWidget);
+
+function openWidget() {
+  widgetUpload.open();
+}
+
+const widgetUpload = cloudinary.createUploadWidget({ 
+  cloudName: "home2222", 
+  uploadPreset: "myuploadspreset" }, (error, imgInfo) => {
+    if (!error && imgInfo && imgInfo.event === "success") {
+      console.log('Done! Here is the image info: ', imgInfo.info.url); 
+      imageURL.value = `${imgInfo.info.url}`;
+  };
+});
+
+
 editForm.addEventListener("submit", formConditions);
 
 // Validate form
@@ -74,8 +92,9 @@ function formConditions(event) {
   const descriptionValue = description.value.trim();
   const altValue = alt.value.trim();
   const idValue = productId.value;
+  const newImageUrlValue = imageURL.value.trim();
 
-  if (titleValue.length === 0 || priceValue.length === 0 || descriptionValue.length === 0) {
+  if (titleValue.length === 0 || priceValue.length === 0 || descriptionValue.length === 0 || imageURL.length < 5) {
     return systemMessage("warning", "Supply values accordingly", ".message-container");
   }
   
@@ -89,14 +108,14 @@ function formConditions(event) {
   
   // console.log(featuredBooleanUpdate)
   
-  updateArticle(titleValue, priceValue, descriptionValue, idValue, featuredBooleanUpdate, altValue);
+  updateArticle(titleValue, priceValue, descriptionValue, idValue, featuredBooleanUpdate, altValue, newImageUrlValue);
 }
 
 
-async function updateArticle(title, price, description, id, featured, alt) {
+async function updateArticle(title, price, description, id, featured, alt, image_url) {
   const updateUrl = api + "/products/" + id;
   const token = getToken();
-  const data = JSON.stringify({title: title, price: price, description: description, featured: featured, alternative_text: alt})
+  const data = JSON.stringify({title: title, price: price, description: description, featured: featured, alternative_text: alt, image_url: image_url})
 
   const options = {
     method: "PUT",

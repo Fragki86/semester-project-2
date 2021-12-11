@@ -7,9 +7,9 @@ export function banner() {
   bannerContainer.innerHTML = `<div class="banner">
                                 <img src="${bannerUrl}" class="banner-img" alt="Child play with his father">
                                 <div class="banner-title">
-                                  <h2 class="banner-title-over">Rer deu</h2>
+                                  <h2 class="banner-title-over">From nature</h2>
                                   <div class="separator"></div>
-                                  <h2 class="banner-title-under">ddetj oowa</h2>
+                                  <h2 class="banner-title-under">to children</h2>
                                 </div>
                               </div>`             
 }

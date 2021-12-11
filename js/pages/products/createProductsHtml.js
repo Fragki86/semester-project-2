@@ -9,6 +9,8 @@ export function createProductsHtml(results) {
 
   for (let i = 0; i < results.length; i++) {
     
+    console.log(results[i])
+
     const image = results[i].image_url;
     const title = results[i].title;
     const price = results[i].price;
