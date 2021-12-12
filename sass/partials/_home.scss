@@ -84,7 +84,8 @@
   position: relative;
   box-shadow: 0 0 10px map-get($colours, "secondary");
   border-radius: 5px;
-  width: 250px;
+  max-width: 250px;
+  min-width: 210px;
   height: 260px;
   margin: 20px auto;
 
@@ -120,8 +121,18 @@
 
 
 
+@media only screen and (min-width: 768px) {
+  .categories-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    margin: 10px auto;
+    gap: 40px;
+  }
+}
 
-@media only screen and (min-width: 900px) {
+
+@media only screen and (min-width: 960px) {
   /* New Products */
   #newCont {
     display: grid;
@@ -176,11 +187,13 @@
 
   
   /* Categories */
+
+  
+}
+
+
+@media only screen and (min-width: 1170px) {
   .categories-container {
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    width: 90%;
-    margin: 10px auto;
-    gap: 40px;
   }
 }

@@ -40,20 +40,33 @@
 }
 
 
-@media only screen and (min-width: 900px) {
-  #searchForm {
-    width: 40%;
-  }
-
+@media only screen and (min-width: 768px) {
   .container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     width: 80%;
     margin-top: 50px;
+  }
+
+  #searchForm {
+    width: 40%;
   }
 
   .card:hover {
     transform: scale(1.1);
   }
 
+}
+
+@media only screen and (min-width: 960px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+
+@media only screen and (min-width: 1500px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

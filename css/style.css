@@ -33,7 +33,7 @@ section {
 }
 
 .spinner > div {
-  background-color: #333;
+  background-color: #402F28;
   height: 100%;
   width: 6px;
   display: inline-block;
@@ -703,7 +703,8 @@ nav a {
   -webkit-box-shadow: 0 0 10px #2f5f5f;
           box-shadow: 0 0 10px #2f5f5f;
   border-radius: 5px;
-  width: 250px;
+  max-width: 250px;
+  min-width: 210px;
   height: 260px;
   margin: 20px auto;
 }
@@ -738,7 +739,19 @@ nav a {
   display: none;
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 768px) {
+  .categories-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    margin: 10px auto;
+    gap: 40px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
   /* New Products */
   #newCont {
     display: -ms-grid;
@@ -793,14 +806,12 @@ nav a {
     text-align: center;
   }
   /* Categories */
+}
+
+@media only screen and (min-width: 1170px) {
   .categories-container {
-    display: -ms-grid;
-    display: grid;
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
-    width: 90%;
-    margin: 10px auto;
-    gap: 40px;
   }
 }
 
@@ -907,21 +918,33 @@ p {
   color: #2f5f5f;
 }
 
-@media only screen and (min-width: 900px) {
-  #searchForm {
-    width: 40%;
-  }
+@media only screen and (min-width: 768px) {
   .container {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
     width: 80%;
     margin-top: 50px;
+  }
+  #searchForm {
+    width: 40%;
   }
   .card:hover {
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .container {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
   }
 }
 
