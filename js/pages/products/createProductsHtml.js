@@ -2,7 +2,10 @@ import { getUser } from "../../localStorage/tokenUser.js"
 
 export function createProductsHtml(results) {
   const productsContainer = document.querySelector(".container");
+  const spinner = document.querySelector(".spinner");
+
   productsContainer.innerHTML = "";
+  spinner.style.display = "none";
 
   let editLink = "";
   const username = getUser();

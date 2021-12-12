@@ -6,6 +6,7 @@ export function detailsHtml(results) {
   document.title = results.title;
 
   const detailsContainer = document.querySelector(".product-details-container");
+  const spinner = document.querySelector(".spinner");
   const username = getUser();
   const title = results.title;
   const price = results.price;
@@ -15,6 +16,7 @@ export function detailsHtml(results) {
   const alt = results.alternative_text
  
 
+  spinner.style.display = "none";
   let editLink = "";
 
   if (username) {
