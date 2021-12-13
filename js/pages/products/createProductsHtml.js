@@ -11,8 +11,6 @@ export function createProductsHtml(results) {
   const username = getUser();
 
   for (let i = 0; i < results.length; i++) {
-    
-    console.log(results[i])
 
     const image = results[i].image_url;
     const title = results[i].title;

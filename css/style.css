@@ -314,16 +314,17 @@ nav a {
     -webkit-transition: border .6s;
     transition: border .6s;
   }
-  nav li:not(#navbarDropdown):hover {
+  nav a {
+    font-size: 1.5rem;
+    -webkit-transition: border .6s;
+    transition: border .6s;
+    border: 1px dashed #fefefe;
+    padding: 3px;
+  }
+  nav a:not(#navbarDropdown):not(#cart):not(#logo):not(.dropdown-item):hover {
+    color: #2f5f5f;
     border: 1px dashed #2f5f5f;
     padding: 3px;
-    color: #2f5f5f;
-  }
-  nav a {
-    font-size: 1.2rem;
-  }
-  nav a:hover {
-    color: #2f5f5f;
   }
   .active {
     border: 1px dashed #2f5f5f;
@@ -405,11 +406,6 @@ nav a {
   .dropdown-menu a {
     font-size: 1.1rem;
     color: #9F4f4f;
-  }
-  .dropdown-menu a:hover {
-    color: #9F4f4f;
-    font-weight: bold;
-    border: none;
   }
 }
 
@@ -631,6 +627,117 @@ nav a {
 .banner-title .separator {
   margin: 0 auto;
   width: 100%;
+  -webkit-animation: showSeparator 2s;
+          animation: showSeparator 2s;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-transform: translate(100%, 0);
+          transform: translate(100%, 0);
+  opacity: 0;
+}
+
+.banner-title .banner-title-over {
+  -webkit-animation: showTopText 2s;
+          animation: showTopText 2s;
+  -webkit-animation-delay: .6s;
+          animation-delay: .6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-transform: translate(0, 100%);
+          transform: translate(0, 100%);
+  opacity: 0;
+}
+
+.banner-title .banner-title-under {
+  -webkit-animation: showBottomText 2s;
+          animation: showBottomText 2s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+  opacity: 0;
+}
+
+@-webkit-keyframes showSeparator {
+  0% {
+    -webkit-transform: translate3d(-20%, 0, 0);
+            transform: translate3d(-20%, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes showSeparator {
+  0% {
+    -webkit-transform: translate3d(-20%, 0, 0);
+            transform: translate3d(-20%, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes showTopText {
+  0% {
+    -webkit-transform: translate3d(0, 20%, 0);
+            transform: translate3d(0, 20%, 0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes showTopText {
+  0% {
+    -webkit-transform: translate3d(0, 20%, 0);
+            transform: translate3d(0, 20%, 0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes showBottomText {
+  0% {
+    -webkit-transform: translate3d(0, -20%, 0);
+            transform: translate3d(0, -20%, 0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes showBottomText {
+  0% {
+    -webkit-transform: translate3d(0, -20%, 0);
+            transform: translate3d(0, -20%, 0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
 }
 
 /* Carousel */
@@ -681,6 +788,77 @@ nav a {
   text-align: center;
 }
 
+.age-cubes-individually:hover {
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
+  -webkit-animation-duration: 1.3s;
+          animation-duration: 1.3s;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(1.1, 0.9) translateY(0);
+            transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(0.9, 1.1) translateY(-20px);
+            transform: scale(0.9, 1.1) translateY(-20px);
+  }
+  50% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(-7px);
+            transform: scale(1, 1) translateY(-7px);
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(1.1, 0.9) translateY(0);
+            transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(0.9, 1.1) translateY(-20px);
+            transform: scale(0.9, 1.1) translateY(-20px);
+  }
+  50% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(-7px);
+            transform: scale(1, 1) translateY(-7px);
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+
 /* Category cards */
 .categories-container {
   display: -ms-grid;
@@ -715,6 +893,12 @@ nav a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.category-card img:hover {
+  opacity: 0.7;
 }
 
 .category-card .category-title {
@@ -1064,7 +1248,7 @@ p {
   font-family: "century-gothic", sans-serif;
   border-radius: 5px;
   border: none;
-  height: 2.3rem;
+  height: 3rem;
   -webkit-transition: -webkit-box-shadow .2s, -webkit-transform .2s;
   transition: -webkit-box-shadow .2s, -webkit-transform .2s;
   transition: box-shadow .2s, transform .2s;
@@ -1118,8 +1302,12 @@ p {
   font-size: 1.8rem;
 }
 
+.cart-list .separator {
+  margin: 20px auto;
+}
+
 .cart-item {
-  width: 90%;
+  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
@@ -1128,7 +1316,7 @@ p {
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
-  margin: 40px auto 0 auto;
+  margin: 20px auto 0 auto;
 }
 
 .cart-item img {
@@ -1158,7 +1346,7 @@ p {
   display: -ms-flexbox;
   display: flex;
   width: 50%;
-  margin: 0 auto;
+  margin: 40px auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1180,14 +1368,18 @@ p {
 }
 
 @media only screen and (min-width: 900px) {
+  .cart-list .separator {
+    margin: 20px auto;
+    width: 70%;
+  }
+  .cart-item {
+    width: 70%;
+  }
   .cart-item h3 {
     font-size: 1.2rem;
   }
-  .total-amount {
-    margin-top: -20px;
-  }
-  .total-amount h4 {
-    font-size: 1.2rem;
+  .total-amount h4, .total-amount p {
+    font-size: 1.5rem;
   }
 }
 
@@ -1296,7 +1488,8 @@ p {
   color: #40ab21;
 }
 
-#addProductForm {
+#addProductForm,
+#editProductForm {
   width: 100%;
   margin: 20px auto;
   -webkit-box-shadow: 0 0 5px #402F28;
@@ -1305,7 +1498,9 @@ p {
   padding: 30px 0;
 }
 
-#addProductForm .form-title, #addProductForm .form-body {
+#addProductForm .form-title, #addProductForm .form-body,
+#editProductForm .form-title,
+#editProductForm .form-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1315,7 +1510,8 @@ p {
           flex-direction: column;
 }
 
-#addProductForm .message-container {
+#addProductForm .message-container,
+#editProductForm .message-container {
   width: 70%;
   margin: 0px auto;
 }
@@ -1380,7 +1576,7 @@ p {
 .form-body #imageUploadBtn {
   cursor: pointer;
   background-color: grey;
-  width: 40%;
+  width: 100%;
   padding: 5px 0;
   border-radius: 5px;
   color: #FFF;
@@ -1389,7 +1585,7 @@ p {
 
 #addProductBtn {
   display: block;
-  width: 40%;
+  width: 60%;
   margin: 40px auto 0 auto;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -1397,8 +1593,18 @@ p {
 }
 
 @media only screen and (min-width: 900px) {
-  #addProductForm {
+  #addProductForm,
+  #editProductForm {
     width: 700px;
+  }
+  #addProductBtn {
+    width: 50%;
+  }
+  .form-body #imageUploadBtn {
+    width: 350px;
+  }
+  #imagePreview {
+    width: 60%;
   }
 }
 /*# sourceMappingURL=style.css.map */

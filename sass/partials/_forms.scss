@@ -1,4 +1,5 @@
-#addProductForm {
+#addProductForm, 
+#editProductForm {
   width: 100%;
   margin: 20px auto;
   box-shadow: 0 0 5px map-get($colours, "text");
@@ -64,7 +65,7 @@
   & #imageUploadBtn {
     cursor: pointer;
     background-color: grey;
-    width: 40%;
+    width: 100%;
     padding: 5px 0;
     border-radius: 5px;
     color: #FFF;
@@ -74,7 +75,7 @@
 
 #addProductBtn {
   display: block;
-  width: 40%;
+  width: 60%;
   margin: 40px auto 0 auto;
   align-self: center;
 }
@@ -83,9 +84,22 @@
 
 
 @media only screen and (min-width: 900px) {
-  #addProductForm {
+  #addProductForm,
+  #editProductForm {
     width: 700px;
   }
 
+  #addProductBtn {
+    width: 50%;
+  }
 
+  .form-body {
+    #imageUploadBtn {
+      width: 350px;
+    }
+  }
+
+  #imagePreview {
+    width: 60%;
+  }
 }

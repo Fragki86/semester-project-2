@@ -1,7 +1,6 @@
 nav {
   position: relative;
   height: 140px;
-  // margin: 0px auto;
   width: 100%;
   display: grid;
   grid-template-columns: 15% 70% 15%;
@@ -54,21 +53,9 @@ nav {
   }
 }
 
-
 .nav-visible {
   transform: translateX(0%);
 }
-
-
-// @keyframes fade-in {
-//   0% {opacity: 0;
-//       transform: translateX(150px);
-//   }
-
-//   100% {opacity: 1;
-//       transform: translateX(0px);
-//   }
-// }
 
 
 #logo {
@@ -81,7 +68,6 @@ nav {
     width: 100%;
   }
 }
-
 
 #cart {
   position: relative;
@@ -210,28 +196,29 @@ nav {
       transition: border .6s;
     }
 
-    & li:not(#navbarDropdown):hover {
-      border: 1px dashed map-get($colours, "secondary");
-      padding: 3px;
-      color: map-get($colours, "secondary");
-    }
+    // & li:not(#navbarDropdown):hover {
+    //   border: 1px dashed map-get($colours, "secondary");
+    //   padding: 3px;
+    //   color: map-get($colours, "secondary");
+    // }
   
     & a {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+      transition: border .6s;
+      border: 1px dashed #fefefe;
+      padding: 3px;
     }
 
-    & a:hover {
+    & a:not(#navbarDropdown):not(#cart):not(#logo):not(.dropdown-item):hover {
       color: map-get($colours, "secondary");
+      border: 1px dashed map-get($colours, "secondary");
+      padding: 3px;
     }
   }
 
   .active {
     border: 1px dashed map-get($colours, "secondary");
     padding: 3px;
-
-    // &:hover {
-    //   border: 0;
-    // }
   }
 
   #logo {
@@ -309,12 +296,6 @@ nav {
     & a {
       font-size: 1.1rem;
       color: map-get($colours, "primary");
-    }
-
-    & a:hover {
-      color: map-get($colours, "primary");
-      font-weight: bold;
-      border: none;
     }
   }
 

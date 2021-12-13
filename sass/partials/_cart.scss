@@ -4,14 +4,20 @@
   font-size: 1.8rem;
 }
 
+.cart-list .separator{
+  margin: 20px auto;
+  // width: 70%;
+}
 
 .cart-item {
-  width: 90%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   justify-items: center;
-  margin: 40px auto 0 auto;
+  margin: 20px auto 0 auto;
+  // padding-bottom: 20px;
+  // border-bottom: 1px solid map-get($colours, "text");
   
 
   & img {
@@ -40,7 +46,7 @@
 .total-amount {
   display: flex;
   width: 50%;
-  margin: 0 auto;
+  margin: 40px auto;
   justify-content: center;
   align-items: center;
 
@@ -59,18 +65,22 @@
 }
 
 @media only screen and (min-width: 900px) {
+  .cart-list .separator{
+    margin: 20px auto;
+    width: 70%;
+  }
+
   .cart-item {
+    width: 70%;
+
     & h3 {
       font-size: 1.2rem;
     }
   }
 
   .total-amount {
-    margin-top: -20px;
-
-    & h4 {
-      font-size: 1.2rem;
-      
+    & h4, p {
+      font-size: 1.5rem;
     }
   }
 }

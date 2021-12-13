@@ -1,9 +1,14 @@
 export function newProducts(results) {
   const newProductsSection = document.querySelector(".carousel-inner");
   const largeScreensContainer = document.querySelector(".lg-screens-container");
+  const spinner = document.querySelector(".spinner");
 
+
+  spinner.style.display = "none";
+  
   for (let i = 0; i < results.length; i++) {
   
+
     const featured = results[i].featured;
 
     if (featured) {

@@ -17,6 +17,7 @@ const description = document.querySelector("#descriptionInput");
 const alt = document.querySelector("#altInput");
 const imageUploadBtn = document.querySelector("#imageUploadBtn");
 const imageURL = document.querySelector("#imageURL");
+const imagePreview = document.querySelector("#imagePreview");
 
 
 imageUploadBtn.addEventListener("click", openWidget);
@@ -31,6 +32,7 @@ const widgetUpload = cloudinary.createUploadWidget({
     if (!error && imgInfo && imgInfo.event === "success") {
       console.log('Done! Here is the image info: ', imgInfo.info.url); 
       imageURL.value = `${imgInfo.info.url}`;
+      imagePreview.innerHTML = `<img src="${imgInfo.info.url}">`
   };
 });
 

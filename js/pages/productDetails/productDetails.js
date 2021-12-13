@@ -51,5 +51,6 @@ getDetails().then(() => {
     const cartLength = JSON.parse(localStorage.getItem("Items In Cart"))
     
     counter.innerHTML = cartLength.length;
+    cartBtn.innerText = "Added";
   }
 });

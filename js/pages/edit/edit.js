@@ -31,6 +31,7 @@ const alt = document.querySelector("#altInput");
 const imageURL = document.querySelector("#imageURL");
 const imageUploadBtn = document.querySelector("#imageUploadBtn");
 const productId = document.querySelector("#productId");
+const imagePreview = document.querySelector("#imagePreview");
 const featuredYes = document.querySelector('input[value="yes"]');
 const featuredNo = document.querySelector('input[id="noInput"]');
 
@@ -46,6 +47,7 @@ async function getApi() {
     productId.value = results.id;
     alt.value = results.alternative_text;
     imageURL.value = results.image_url;
+    imagePreview.innerHTML = `<img src="${results.image_url}">`
 
     const featuredBoolean = results.featured;
 
@@ -77,8 +79,10 @@ const widgetUpload = cloudinary.createUploadWidget({
     if (!error && imgInfo && imgInfo.event === "success") {
       console.log('Done! Here is the image info: ', imgInfo.info.url); 
       imageURL.value = `${imgInfo.info.url}`;
-  };
-});
+    };
+  });
+
+
 
 
 editForm.addEventListener("submit", formConditions);
@@ -129,17 +133,11 @@ async function updateArticle(title, price, description, id, featured, alt, image
   try {
     const response = await fetch(updateUrl, options);
     const results = await response.json();
-
     systemMessage("success", "Product updated successfuly", ".message-container")
-    console.log(results)
-
-
 
   } catch(error) {
     systemMessage("error", error, ".message-container")
     console.log(error)
   }
-
-
 }
 
