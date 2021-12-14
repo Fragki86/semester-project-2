@@ -55,7 +55,7 @@ function validateForm(event) {
 
   let featuredBoolean = "";
   
-  if (titleValue.length < 3 || priceValue < 1 || descriptionValue.length < 8 || alt.length < 3 || imageURL.length < 5) {
+  if (titleValue.length < 3 || priceValue < 1 || descriptionValue.length < 8 || altValue.length < 3 || newImageUrlValue.length < 5) {
     return systemMessage("error", "All fields required", ".message-container")
   }
   
@@ -93,6 +93,7 @@ async function newProduct(title, price, description, featured, alt, image_url) {
     console.log(results)
     if (results.createdAt) {
       addProductForm.reset();
+      imagePreview.innerHTML = "";
       systemMessage("success", "Product added successfully", ".message-container");
     }
 

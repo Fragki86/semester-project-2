@@ -16,10 +16,16 @@ let sum = 0;
 
 
 
-function shoppingCartList() {
-  
-  
+async function shoppingCartList() {
   for (let i = 0; i < getCart.length; i++) {
+    const imageUrl = getCart[i].image_url;
+    const altText = getCart[i].alternative_text;
+    const title = getCart[i].title;
+    const price = getCart[i].price;
+    const id = getCart[i].id;
+    
+    
+    
     emptyCartMessage.style.display = "none";
     clearBtn.style.display = "block";
     
@@ -31,22 +37,62 @@ function shoppingCartList() {
     
 
     cartList.innerHTML += `<div class="cart-item">
-                            <img src="${getCart[i].image_url}" alt="${getCart[i].alternative_text}">
-                            <h3>${getCart[i].title}</h3>
-                            <p class="card-price">${getCart[i].price}$</p>
-                            <a href="productDetails.html?id=${getCart[i].id}">
+                            <img src="${imageUrl}" alt="${altText}">
+                            <h3>${title}</h3>
+                            <p class="card-price">${price}$</p>
+                            <a href="productDetails.html?id=${id}">
                             <i class="fas fa-link"></i>
                             </a>
+                            <div class="trash-icons" data-id="${id}" data-price="${price}">
+                            <i class="fas fa-trash-alt"></i>
+                            </div>
                           </div>
-                          <div class="separator"></div>`
+                          `
 
     totalAmount.innerHTML = `<h4>Total:</h4><p class="card-price">${sum}$</p>`
   }
 
 
+  const trashIcons = document.querySelectorAll(".trash-icons");
 
+  trashIcons.forEach( (icons) => {
+    icons.addEventListener("click", removeItem)
+  })
 }
 shoppingCartList();
+
+
+  function removeItem() {
+    const idData = this.dataset.id;
+    const priceData = parseInt(this.dataset.price);
+
+    let itemList = JSON.parse(localStorage.getItem("Items In Cart"));
+    
+    for (let p = 0; p < itemList.length; p++) {
+      if (itemList[p].id === idData) {
+        itemList.splice(p, 1)
+      }
+    }
+
+    console.log(itemList)
+
+
+    if (itemList.length === 0) {
+      clearStorage()
+    }
+
+    itemList = JSON.stringify(itemList);
+    localStorage.setItem("Items In Cart", itemList);
+
+    this.parentElement.remove();
+    counter();
+    sum -= priceData;
+    totalAmount.innerHTML = `<h4>Total:</h4><p class="card-price">${sum}$</p>`
+
+
+
+  }
+
 
 clearBtn.addEventListener("click", clearStorage);
 

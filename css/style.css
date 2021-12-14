@@ -1310,13 +1310,15 @@ p {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
   margin: 20px auto 0 auto;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #402F28;
 }
 
 .cart-item img {
@@ -1339,6 +1341,11 @@ p {
 
 .cart-item .card-price {
   font-size: 1.1rem;
+}
+
+.trash-icons {
+  color: #9F4f4f;
+  cursor: pointer;
 }
 
 .total-amount {

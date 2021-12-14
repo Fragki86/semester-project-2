@@ -12,12 +12,12 @@
 .cart-item {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   align-items: center;
   justify-items: center;
   margin: 20px auto 0 auto;
-  // padding-bottom: 20px;
-  // border-bottom: 1px solid map-get($colours, "text");
+  padding-bottom: 20px;
+  border-bottom: 1px solid map-get($colours, "text");
   
 
   & img {
@@ -41,6 +41,12 @@
   & .card-price {
     font-size: 1.1rem;
   }
+
+}
+
+.trash-icons {
+  color: map-get($colours, "primary");
+  cursor: pointer;
 }
 
 .total-amount {

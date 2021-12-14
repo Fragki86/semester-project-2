@@ -5,8 +5,10 @@ import { getToken } from "../../localStorage/tokenUser.js";
 // Deleting Items from the editing page
 export function deleteBtn(id) {
   const deleteButton = document.querySelector("#deleteBtn");
+  // const deleteIcon = document.querySelector("#trash");
 
   deleteButton.addEventListener("click", deleteProduct);
+  // deleteIcon.addEventListener("click", console.log("ds"));
 
   async function deleteProduct() {
     const deleteConfirmation = confirm("Are you sure you want to delete this product permanently?");
