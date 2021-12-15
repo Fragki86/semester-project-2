@@ -1150,7 +1150,7 @@ p {
   color: #402F28;
   font-family: "Lato", sans-serif;
   width: 90%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .product-details-container i {
@@ -1310,8 +1310,8 @@ p {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

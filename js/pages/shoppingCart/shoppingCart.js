@@ -14,8 +14,7 @@ const clearBtn = document.querySelector("#clearCartBtn");
 const counterHtml = document.querySelector("#counter");
 let sum = 0;
 
-
-
+/* -- Creating the shopping list -- */
 async function shoppingCartList() {
   for (let i = 0; i < getCart.length; i++) {
     const imageUrl = getCart[i].image_url;
@@ -40,6 +39,11 @@ async function shoppingCartList() {
                             <img src="${imageUrl}" alt="${altText}">
                             <h3>${title}</h3>
                             <p class="card-price">${price}$</p>
+                            <div class="quantity">
+                              <button type="button" id="minusBtn">-</button>
+                              <span>1</span>
+                              <button type="button" id="plusBtn">+</button>
+                            </div>
                             <a href="productDetails.html?id=${id}">
                             <i class="fas fa-link"></i>
                             </a>
@@ -62,6 +66,8 @@ async function shoppingCartList() {
 shoppingCartList();
 
 
+
+/* -- Function to remove each item -- */
   function removeItem() {
     const idData = this.dataset.id;
     const priceData = parseInt(this.dataset.price);
@@ -88,12 +94,11 @@ shoppingCartList();
     counter();
     sum -= priceData;
     totalAmount.innerHTML = `<h4>Total:</h4><p class="card-price">${sum}$</p>`
-
-
-
   }
 
 
+
+/* -- Function to clear the list and the storge -- */  
 clearBtn.addEventListener("click", clearStorage);
 
   function clearStorage() {
