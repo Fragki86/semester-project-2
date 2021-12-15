@@ -31,7 +31,6 @@ async function getDetails() {
     window.localStorage.setItem("Current Product Showing", JSON.stringify(results));
     showInCart = results;
 
-    console.log(showInCart)
     detailsContainer.innerHTML = "";
     detailsHtml(results);
     
@@ -48,15 +47,22 @@ getDetails().then(() => {
 
 
   function addProduct() {
+    const title = this.dataset.title;
+  
+    for (let i = 0; i < getShowedItem.length; i++) {
+      if (getShowedItem[i].title === title) {
+        getShowedItem[i].quantity ++;
+        
+        localStorage.setItem("Items In Cart", JSON.stringify(getShowedItem));
+        counter();
+        return
+      }
+    }
+
     getShowedItem.push(showInCart);
     localStorage.setItem("Items In Cart", JSON.stringify(getShowedItem));
-   
-    const counter = document.querySelector("#counter");
-    const cartLength = JSON.parse(localStorage.getItem("Items In Cart"))
+    counter()
 
-    console.log(cartLength);
-    
-    counter.innerHTML = cartLength.length;
-    // cartBtn.innerText = "Added";
+
   }
 });

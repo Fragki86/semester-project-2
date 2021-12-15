@@ -2,6 +2,7 @@ import { nav } from "../../modules/layout/nav.js";
 import { footer } from "../../modules/layout/footer.js";
 import { counter } from "../../modules/utilities/counter.js";
 
+
 nav();
 footer();
 counter();
@@ -15,13 +16,14 @@ const counterHtml = document.querySelector("#counter");
 let sum = 0;
 
 /* -- Creating the shopping list -- */
-async function shoppingCartList() {
+function shoppingCartList() {
   for (let i = 0; i < getCart.length; i++) {
     const imageUrl = getCart[i].image_url;
     const altText = getCart[i].alternative_text;
     const title = getCart[i].title;
     const price = getCart[i].price;
     const id = getCart[i].id;
+    let quantity = getCart[i].quantity;
     
     
     
@@ -40,9 +42,9 @@ async function shoppingCartList() {
                             <h3>${title}</h3>
                             <p class="card-price">${price}$</p>
                             <div class="quantity">
-                              <button type="button" id="minusBtn">-</button>
-                              <span>1</span>
-                              <button type="button" id="plusBtn">+</button>
+                              <button type="button" id="minusBtn" data-id="${id}">-</button>
+                              <span>${quantity}</span>
+                              <button type="button" id="plusBtn" data-id="${id}">+</button>
                             </div>
                             <a href="productDetails.html?id=${id}">
                             <i class="fas fa-link"></i>
@@ -54,7 +56,34 @@ async function shoppingCartList() {
                           `
 
     totalAmount.innerHTML = `<h4>Total:</h4><p class="card-price">${sum}$</p>`
+    
+
+    const minusBtn = document.querySelector("#minusBtn");
+    const plusBtn = document.querySelector("#plusBtn");
+  
+    minusBtn.addEventListener("click", decrease);
+    plusBtn.addEventListener("click", increase);
+  
+    function decrease() {
+      getCart[i].quantity--
+      console.log(getCart[i].quantity)
+      shoppingCartList(getCart)
+    }
+  
+    function increase() {
+      getCart[i].quantity++
+      console.log(getCart[i].quantity)
+      shoppingCartList(getCart)
+    }
+    
   }
+  
+
+  
+  
+
+
+
 
 
   const trashIcons = document.querySelectorAll(".trash-icons");
@@ -66,6 +95,26 @@ async function shoppingCartList() {
 shoppingCartList();
 
 
+// cartList.addEventListener("click", (e) => {
+//   const plusBtn = e.target.classList.contains("plus-btn");
+//   const minusBtn = e.target.classList.contains("minus-btn");
+
+//   if (plusBtn || minusBtn) {
+//     for (let i = 0; i < getCart.length; i++) {
+//       if (getCart[i].id === e.target.dataset.id) {
+//         if (plusBtn) {
+//           getCart[i].quantity ++;
+//         } else if (minusBtn) {
+//           getCart[i].quantity --;
+//         }
+//       }
+//     }
+//   }
+
+//   shoppingCartList(getCart)
+// });
+
+
 
 /* -- Function to remove each item -- */
   function removeItem() {
@@ -74,9 +123,9 @@ shoppingCartList();
 
     let itemList = JSON.parse(localStorage.getItem("Items In Cart"));
     
-    for (let p = 0; p < itemList.length; p++) {
-      if (itemList[p].id === idData) {
-        itemList.splice(p, 1)
+    for (let i = 0; i < itemList.length; i++) {
+      if (itemList[i].id === idData) {
+        itemList.splice(i, 1)
       }
     }
 

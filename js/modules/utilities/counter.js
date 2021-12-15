@@ -1,6 +1,16 @@
 export function counter()  {
 const counter = document.querySelector("#counter");
 const cartLength = JSON.parse(localStorage.getItem("Items In Cart")) || []
+let totalProducts = 0
 
-counter.innerHTML = cartLength.length;
+for (let i = 0; i < cartLength.length; i++) {
+  // console.log(cartLength[i].quantity);
+  const productQuantity = parseFloat(cartLength[i].quantity);
+
+    if (!isNaN(productQuantity)) {
+      totalProducts += productQuantity;
+    }
+
+  }
+  counter.innerHTML = totalProducts;
 }
