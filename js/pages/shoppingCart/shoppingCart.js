@@ -7,154 +7,161 @@ nav();
 footer();
 counter();
 
-const getCart = JSON.parse(localStorage.getItem("Items In Cart"));
+
+let getCart = [];
+
+getCart = JSON.parse(localStorage.getItem("Items In Cart"));
 const cartList = document.querySelector(".cart-list");
 const totalAmount = document.querySelector(".total-amount");
 const emptyCartMessage = document.querySelector(".empty-cart-message");
 const clearBtn = document.querySelector("#clearCartBtn");
 const counterHtml = document.querySelector("#counter");
-let sum = 0;
+
+
 
 /* -- Creating the shopping list -- */
-function shoppingCartList() {
-  for (let i = 0; i < getCart.length; i++) {
-    const imageUrl = getCart[i].image_url;
-    const altText = getCart[i].alternative_text;
-    const title = getCart[i].title;
-    const price = getCart[i].price;
-    const id = getCart[i].id;
-    let quantity = getCart[i].quantity;
-    
-    
-    
+function createCartList() {
+  emptyCartMessage.style.display = "block";
+  cartList.innerHTML = "";
+   
+  getCart.forEach((product) => {
+    totalPrice()
     emptyCartMessage.style.display = "none";
+
     clearBtn.style.display = "block";
-    
-    const totalCost = parseFloat(getCart[i].price);
+    const imageUrl = product.image_url;
+    const altText = product.alternative_text;
+    const title = product.title;
+    const price = product.price;
+    const id = product.id;
+    let quantity = product.quantity;
 
-    if (!isNaN(totalCost)) {
-      sum += totalCost;
+    cartList.innerHTML += ` <div class="cart-item">
+                              <img src="${imageUrl}" alt="${altText}">
+                              <h3>${title}</h3>
+                              <p class="card-price">${price}$</p>
+                              <div class="quantity">
+                                <button type="button" class="minus-btn" data-id=${id}>-</button>
+                                <span>${quantity}</span>
+                                <button type="button" class="plus-btn" data-id=${id}>+</button>
+                              </div>
+                              <a href="productDetails.html?id=${id}">
+                              <i class="fas fa-link"></i>
+                              </a>
+                              <div class="trash-icons" data-id="${id}" data-price="${price}">
+                              <i class="fas fa-trash-alt"></i>
+                              </div>
+                            </div>`
+  
+
+    // -- Deccrease- Increase quantity
+    const minusBtn = document.querySelectorAll(".minus-btn");
+    minusBtn.forEach( (decBtn) => {
+      decBtn.addEventListener("click", () => decrease(decBtn));
+    })
+
+    function decrease(decBtn) {
+      const dataId = decBtn.dataset.id;
+      for (let i = 0; i < getCart.length; i++) {
+
+        if (getCart[i].id === dataId) {
+          getCart[i].quantity --
+          
+          if (getCart[i].quantity === 1) {
+            console.log("test")
+            decBtn.disabled = true;
+          }
+        } 
+        
+      }
+      
+      localStorage.setItem("Items In Cart", JSON.stringify(getCart));
+      createCartList(getCart);
     }
-    
 
-    cartList.innerHTML += `<div class="cart-item">
-                            <img src="${imageUrl}" alt="${altText}">
-                            <h3>${title}</h3>
-                            <p class="card-price">${price}$</p>
-                            <div class="quantity">
-                              <button type="button" id="minusBtn" data-id="${id}">-</button>
-                              <span>${quantity}</span>
-                              <button type="button" id="plusBtn" data-id="${id}">+</button>
-                            </div>
-                            <a href="productDetails.html?id=${id}">
-                            <i class="fas fa-link"></i>
-                            </a>
-                            <div class="trash-icons" data-id="${id}" data-price="${price}">
-                            <i class="fas fa-trash-alt"></i>
-                            </div>
-                          </div>
-                          `
 
-    totalAmount.innerHTML = `<h4>Total:</h4><p class="card-price">${sum}$</p>`
-    
+    const plusBtn = document.querySelectorAll(".plus-btn");
+    plusBtn.forEach( (incBtn) => {
+      incBtn.addEventListener("click", increase);
+    })
 
-    const minusBtn = document.querySelector("#minusBtn");
-    const plusBtn = document.querySelector("#plusBtn");
-  
-    minusBtn.addEventListener("click", decrease);
-    plusBtn.addEventListener("click", increase);
-  
-    function decrease() {
-      getCart[i].quantity--
-      console.log(getCart[i].quantity)
-      shoppingCartList(getCart)
-    }
-  
     function increase() {
-      getCart[i].quantity++
-      console.log(getCart[i].quantity)
-      shoppingCartList(getCart)
-    }
+      const dataId = this.dataset.id
+
+      for (let i = 0; i < getCart.length; i++) {
+        if (getCart[i].id === dataId) {
+          getCart[i].quantity ++
+        }
+      }
     
-  }
+      localStorage.setItem("Items In Cart", JSON.stringify(getCart));
+      createCartList(getCart);
+    }           
+    
+
+  })
   
-
   
   
-
-
-
-
-
+  // -- Declare trash icons to use them later
   const trashIcons = document.querySelectorAll(".trash-icons");
-
+  
   trashIcons.forEach( (icons) => {
     icons.addEventListener("click", removeItem)
   })
+  
+  
+  counter();
 }
-shoppingCartList();
-
-
-// cartList.addEventListener("click", (e) => {
-//   const plusBtn = e.target.classList.contains("plus-btn");
-//   const minusBtn = e.target.classList.contains("minus-btn");
-
-//   if (plusBtn || minusBtn) {
-//     for (let i = 0; i < getCart.length; i++) {
-//       if (getCart[i].id === e.target.dataset.id) {
-//         if (plusBtn) {
-//           getCart[i].quantity ++;
-//         } else if (minusBtn) {
-//           getCart[i].quantity --;
-//         }
-//       }
-//     }
-//   }
-
-//   shoppingCartList(getCart)
-// });
-
-
-
-/* -- Function to remove each item -- */
-  function removeItem() {
-    const idData = this.dataset.id;
-    const priceData = parseInt(this.dataset.price);
-
-    let itemList = JSON.parse(localStorage.getItem("Items In Cart"));
+createCartList();
     
-    for (let i = 0; i < itemList.length; i++) {
-      if (itemList[i].id === idData) {
-        itemList.splice(i, 1)
-      }
+
+
+/* -- Calculate total price of shopping list -- */
+function totalPrice() {
+  let sum = 0;
+  
+  getCart.forEach( (product) => {
+    sum += product.price * product.quantity;
+  })
+
+  totalAmount.innerHTML = `<h4>Total:</h4><p class="card-price">${sum}$</p>`
+}
+
+
+
+
+/* -- Remove items individually -- */
+function removeItem() {
+  const idData = this.dataset.id;
+  
+  for (let i = 0; i < getCart.length; i++) {
+    if (getCart[i].id === idData) {
+      getCart.splice(i, 1)
+
     }
-
-    console.log(itemList)
-
-
-    if (itemList.length === 0) {
-      clearStorage()
-    }
-
-    itemList = JSON.stringify(itemList);
-    localStorage.setItem("Items In Cart", itemList);
-
-    this.parentElement.remove();
-    counter();
-    sum -= priceData;
-    totalAmount.innerHTML = `<h4>Total:</h4><p class="card-price">${sum}$</p>`
+  }
+  
+  if (getCart.length === 0) {
+    clearStorage()
   }
 
+  this.parentElement.remove();
+  localStorage.setItem("Items In Cart", JSON.stringify(getCart));
+  totalPrice();
+  counter();
+}
 
 
-/* -- Function to clear the list and the storge -- */  
+
+/* -- Clear cart and storage -- */  
 clearBtn.addEventListener("click", clearStorage);
 
-  function clearStorage() {
-    localStorage.removeItem("Items In Cart");
-    cartList.innerHTML = "";
-    totalAmount.innerHTML = "";
-    counterHtml.innerHTML = "0";
-    clearBtn.style.display = "none";
-    emptyCartMessage.style.display = "block";
-  }
+function clearStorage() {
+  localStorage.removeItem("Items In Cart");
+  cartList.innerHTML = "";
+  totalAmount.innerHTML = "";
+  counterHtml.innerHTML = "0";
+  clearBtn.style.display = "none";
+  emptyCartMessage.style.display = "block";
+}

@@ -8,12 +8,12 @@ export function nav() {
   const username = getUser();
 
   let authorisationLink = `
-                            <a href="login.html"><i class="far fa-user"></i></a>
+                            <a href="login.html" class="user-icon"><i class="far fa-user"></i></a>
                             <a href="login.html" id="loggedUser">Login</a>`
   let adminLinks = "";
   
   if (username) {
-    authorisationLink = `<a href="#"><i class="fas fa-user"></i></a>
+    authorisationLink = `<a href="#" class="user-icon"><i class="fas fa-user"></i></a>
                         <span class="greeting-span">Hi, ${username}<i class="fas fa-sign-out-alt"></i></span>`
     adminLinks = `
     <div class="nav-separator"></div>
