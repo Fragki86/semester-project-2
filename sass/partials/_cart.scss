@@ -4,6 +4,10 @@
   font-size: 1.8rem;
 }
 
+.cart-container {
+  margin: 90px auto
+}
+
 .cart-list .separator{
   margin: 20px auto;
   // width: 70%;
@@ -12,12 +16,14 @@
 .cart-item {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   align-items: center;
   justify-items: center;
   margin: 20px auto 0 auto;
   padding-bottom: 20px;
   border-bottom: 1px solid map-get($colours, "text");
+  row-gap: 10px;
   
 
   & img {
@@ -29,13 +35,16 @@
   }
 
   & h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 0;
   }
 
   & a {
-    margin-right: 20px;
-    color: map-get($colours, "secondary")
+    // margin-right: 20px;
+    color: map-get($colours, "secondary");
+    grid-row: 2;
+    grid-column: 2;
+   
   }
 
   & .card-price {
@@ -47,6 +56,8 @@
 .trash-icons {
   color: map-get($colours, "primary");
   cursor: pointer;
+  grid-column: 3;
+ 
 }
 
 .total-amount {

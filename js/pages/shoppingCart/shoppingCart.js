@@ -57,27 +57,22 @@ function createCartList() {
     // -- Deccrease- Increase quantity
     const minusBtn = document.querySelectorAll(".minus-btn");
     minusBtn.forEach( (decBtn) => {
-      decBtn.addEventListener("click", () => decrease(decBtn));
-    })
-
-    function decrease(decBtn) {
-      const dataId = decBtn.dataset.id;
-      for (let i = 0; i < getCart.length; i++) {
-
-        if (getCart[i].id === dataId) {
-          getCart[i].quantity --
-          
-          if (getCart[i].quantity === 1) {
-            console.log("test")
-            decBtn.disabled = true;
-          }
-        } 
+      decBtn.addEventListener("click", (event) => {
+        const dataId = decBtn.dataset.id;
         
-      }
-      
-      localStorage.setItem("Items In Cart", JSON.stringify(getCart));
-      createCartList(getCart);
-    }
+        for (let i = 0; i < getCart.length; i++) {
+          if (getCart[i].quantity === 1) {
+            event.target.disabled === true
+          } else if (getCart[i].id === dataId) {
+            getCart[i].quantity --;
+          }
+        }
+        
+        localStorage.setItem("Items In Cart", JSON.stringify(getCart));
+        createCartList(getCart);
+        
+      });
+    })
 
 
     const plusBtn = document.querySelectorAll(".plus-btn");
@@ -125,7 +120,7 @@ function totalPrice() {
     sum += product.price * product.quantity;
   })
 
-  totalAmount.innerHTML = `<h4>Total:</h4><p class="card-price">${sum}$</p>`
+  totalAmount.innerHTML = `<h4>Total:</h4><p class="card-price">${sum.toFixed(2)}$</p>`
 }
 
 
