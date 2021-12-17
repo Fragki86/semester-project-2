@@ -1,6 +1,6 @@
 import { getUser } from "../../localStorage/tokenUser.js";
 
-
+/* -- Creating nav html --*/
 export function nav() {
   const navMenu = document.querySelector(".nav-menu");
   const { pathname } = document.location;
@@ -36,7 +36,8 @@ export function nav() {
                       <i class="fas fa-shopping-bag"></i>
                     </a>
                     <a href="index.html" id="logo">
-                      <img src="images/logo.svg" alt="Eco-kids Logo">
+                      <object type="image/svg+xml" data="images/logo.svg" alt="Eco kids logo"></object>
+                      
                     </a>
                     <div id="burgerBtn">
                       <i class="fas fa-bars"></i>
@@ -55,7 +56,7 @@ export function nav() {
                     </div>
                 </nav>
                 `
-
+                // img src="images/logo.svg" alt="Eco-kids Logo">
 if (username){
 const logOutBtn = document.querySelector(".greeting-span")
 logOutBtn.addEventListener ("click", logOut);
@@ -72,7 +73,7 @@ logOutBtn.addEventListener ("click", logOut);
 }
 
 
-
+/* -- Mobile menu appear/disapper -- */
 const burgerBtn = document.querySelector("#burgerBtn");
 const navMobile = document.querySelector("nav ul");
 
@@ -80,6 +81,5 @@ burgerBtn.addEventListener ("click", fadeInMenu);
 
 function fadeInMenu() {
     navMobile.classList.toggle("nav-visible");
-
 }
 }
