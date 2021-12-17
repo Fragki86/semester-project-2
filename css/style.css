@@ -122,8 +122,8 @@ nav ul {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   background-color: #fefefe;
-  -webkit-transform: translateX(110%);
-          transform: translateX(110%);
+  -webkit-transform: translateX(-105%);
+          transform: translateX(-105%);
   -webkit-transition: -webkit-transform 0.4s ease-in;
   transition: -webkit-transform 0.4s ease-in;
   transition: transform 0.4s ease-in;
@@ -304,8 +304,8 @@ nav a {
         -ms-flex-pack: start;
             justify-content: flex-start;
     background-color: none;
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
   nav li {
     margin: 15px;
