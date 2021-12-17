@@ -1,5 +1,6 @@
 import { createProductsHtml } from "./createProductsHtml.js";
 
+// Search for titles or description
 export function filterProducts(results) {
   const searchForm = document.querySelector("#searchForm");
   

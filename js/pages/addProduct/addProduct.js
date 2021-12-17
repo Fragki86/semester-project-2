@@ -9,7 +9,7 @@ nav();
 footer();
 counter();
 
-
+// Declare variables
 const addProductForm = document.querySelector("#addProductForm");
 const title = document.querySelector("#titleInput");
 const price = document.querySelector("#priceInput");
@@ -20,6 +20,7 @@ const imageURL = document.querySelector("#imageURL");
 const imagePreview = document.querySelector("#imagePreview");
 
 
+// Widget for image-file upload to cloudinary and then in strapi
 imageUploadBtn.addEventListener("click", openWidget);
 
 function openWidget() {
@@ -37,9 +38,7 @@ const widgetUpload = cloudinary.createUploadWidget({
 });
 
 
-
-
-
+// Validate form conditions
 addProductForm.addEventListener("submit", validateForm)
 
 function validateForm(event) {
@@ -49,8 +48,6 @@ function validateForm(event) {
   const descriptionValue = description.value.trim();
   const altValue = alt.value.trim();
   const newImageUrlValue = imageURL.value.trim();
-
-
 
 
   let featuredBoolean = "";
@@ -66,13 +63,11 @@ function validateForm(event) {
     featuredBoolean = "false";
   }
   
-
-
-
   newProduct(titleValue, priceValue, descriptionValue, featuredBoolean, altValue, newImageUrlValue)
 }
 
 
+// Adding the new item in the api
 async function newProduct(title, price, description, featured, alt, image_url) {
   const newUrl = api + "/products";
   const token = getToken();
@@ -90,7 +85,6 @@ async function newProduct(title, price, description, featured, alt, image_url) {
     const response = await fetch(newUrl, options);
     const results = await response.json();
 
-    console.log(results)
     if (results.createdAt) {
       addProductForm.reset();
       imagePreview.innerHTML = "";
@@ -101,8 +95,5 @@ async function newProduct(title, price, description, featured, alt, image_url) {
     systemMessage("warning", "Something went wrong", ".message-container");
     console.log(error);
   }
-
-
 }
 
-// validateForm();

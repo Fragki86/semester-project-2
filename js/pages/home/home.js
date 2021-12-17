@@ -11,7 +11,7 @@ nav();
 footer();
 counter();
 
-
+// Fetching the api to display the new products and the banner
 async function getApi() {
   const mainApi = api + "/products";
   const bannerApi = api + "/home"

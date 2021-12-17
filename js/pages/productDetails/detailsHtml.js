@@ -1,6 +1,6 @@
 import { getUser } from "../../localStorage/tokenUser.js"
 
-
+// Create html
 export function detailsHtml(results) {
   document.title = results.title;
 

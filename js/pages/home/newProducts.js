@@ -3,15 +3,13 @@ export function newProducts(results) {
   const largeScreensContainer = document.querySelector(".lg-screens-container");
   const spinner = document.querySelector(".spinner");
 
-
   spinner.style.display = "none";
   
   for (let i = 0; i < results.length; i++) {
-  
-
     const featured = results[i].featured;
 
     if (featured) {
+      // Featured products for mobile
       newProductsSection.innerHTML += `
                             <div class="carousel-item ${!i ? "active" : ""} d-lg-none">
                               <div class="card" style="width: 85%">
@@ -24,8 +22,7 @@ export function newProducts(results) {
                             </div>
                             `
 
-
-                            
+      // Featured products for large screens
       largeScreensContainer.innerHTML += `<a href="productDetails.html?id=${results[i].id}">
                                             <div id="newCont">
                                               <div class="card" style="width: 85%">
@@ -38,6 +35,5 @@ export function newProducts(results) {
                                             </div>
                                           </a>`
     }
-
   }
 }

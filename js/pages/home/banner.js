@@ -1,5 +1,4 @@
-import { api } from "../../modules/utilities/api.js"
-
+// Fetching the banner separately
 export function banner() {
   const bannerContainer = document.querySelector("#bannerContainer");
   const bannerUrl = "https://res.cloudinary.com/home2222/image/upload/v1639084937/banner_img_4102055563.jpg";

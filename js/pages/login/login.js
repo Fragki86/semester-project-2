@@ -3,22 +3,18 @@ import { api } from "../../modules/utilities/api.js";
 import { addToken, addUser, getToken, getUser } from "../../localStorage/tokenUser.js";
 import { systemMessage } from "../../modules/utilities/systemMessage.js";
 
-// nav();
 const loginForm = document.querySelector(".log-in-form");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 
+// Validate form for Login
 loginForm.addEventListener("submit", validateLogin);
-// const check = getUser();
-// console.log(check);
-// Validate Login
+
 function validateLogin(event) {
   event.preventDefault();
 
   const emailValue = email.value.trim();
   const passwordValue = password.value.trim();
-
-  // console.log(emailValue, passwordValue)
 
   if (emailValidation(emailValue) !== true || passwordValue.length < 2) {
     return systemMessage("error", "Wrong username or password", ".message-container")
@@ -27,6 +23,8 @@ function validateLogin(event) {
   login(emailValue, passwordValue);
 }
 
+
+// Save credentials and give access
 async function login(username, password) {
   const authUrl = api + "/auth/local";
 
@@ -53,7 +51,6 @@ async function login(username, password) {
       location.href = "/index.html";
     }
     
-    console.log(results);
     if (results.error) {
       systemMessage("error", "Invalid user", ".message-container");
     }

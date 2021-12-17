@@ -124,8 +124,6 @@ function totalPrice() {
 }
 
 
-
-
 /* -- Remove items individually -- */
 function removeItem() {
   const idData = this.dataset.id;

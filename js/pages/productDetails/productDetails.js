@@ -23,6 +23,7 @@ if (!id) {
 
 const productUrl = api + "/products/" + id;
 
+// Add the showing product in storage to fetch it after
 async function getDetails() {
   try {
     const response = await fetch(productUrl);
@@ -39,6 +40,7 @@ async function getDetails() {
   }
 };
 getDetails().then(() => {
+  // Adding product in the cart
   const cartBtn = document.querySelector("#cartBtn");
 
   const getShowedItem = JSON.parse(localStorage.getItem("Items In Cart")) || [];
@@ -62,7 +64,6 @@ getDetails().then(() => {
     getShowedItem.push(showInCart);
     localStorage.setItem("Items In Cart", JSON.stringify(getShowedItem));
     counter()
-
 
   }
 });
