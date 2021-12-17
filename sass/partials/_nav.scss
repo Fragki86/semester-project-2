@@ -24,7 +24,7 @@ nav {
     height: 400px;
     justify-content: space-evenly;
     background-color: #fefefe;
-    transform: translateX(-105%);
+    transform: translateX(-110%);
     transition: transform 0.4s ease-in;
   }
 
@@ -54,7 +54,7 @@ nav {
 }
 
 .nav-visible {
-  transform: translateX(00%);
+  transform: translateX(0%);
 }
 
 
@@ -186,7 +186,7 @@ nav {
       top: 0px;
       justify-content: flex-start;
       background-color: none;
-      transform: translateX(100%);
+      transform: translateX(0%);
     }
   
     & li {
@@ -263,13 +263,19 @@ nav {
     align-items: center;
     justify-self: end;
   
+    
     & i {
       font-size: 1.4rem;
       margin-right: 10px;
+
     }
   
     & #loggedUser {
       display: block;
+    }
+
+    .user-icon:hover {
+        color: map-get($colours, "secondary")
     }
   }
 

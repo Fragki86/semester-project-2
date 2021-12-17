@@ -41,9 +41,9 @@ function createCartList() {
                               <h3>${title}</h3>
                               <p class="card-price">${price}$</p>
                               <div class="quantity">
-                                <button type="button" class="minus-btn" data-id=${id}>-</button>
+                                <button type="button" class="minus-btn" data-id=${id}><i class="fas fa-minus-circle"></i></button>
                                 <span>${quantity}</span>
-                                <button type="button" class="plus-btn" data-id=${id}>+</button>
+                                <button type="button" class="plus-btn" data-id=${id}><i class="fas fa-plus-circle"></i></button>
                               </div>
                               <a href="productDetails.html?id=${id}">
                               <i class="fas fa-link"></i>
