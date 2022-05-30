@@ -69,7 +69,7 @@ Make sure you open a pull request so that the code can be reviewed.
 ## Contact
 
 You can find me here:
-<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/facebook-f.svg" width="50" height="50">
+<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/brands/facebook-f.svg" width="50" height="50" style="color: #fff">
 
 []
 
