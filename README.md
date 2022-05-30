@@ -70,6 +70,6 @@ Make sure you open a pull request so that the code can be reviewed.
 
 You can find me also here:
 
-![image](./images/fb_md_file.svg)[Giorgos Fragkias](https://www.facebook.com/giorgos.fragkias)
+![image](./images/fb_md_file.svg)(https://www.facebook.com/giorgos.fragkias)
 
-[LinkedIn](https://www.linkedin.com/in/georgios-fragkias-56026382/)
+![image](./images/linkedin_md_file.png)(https://www.linkedin.com/in/georgios-fragkias-56026382/)
