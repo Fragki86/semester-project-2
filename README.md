@@ -69,7 +69,7 @@ Make sure you open a pull request so that the code can be reviewed.
 ## Contact
 
 You can find me here:
-<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/crown.svg" width="50" height="50" color="#fff">
+<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/crown.svg" width="50" height="50" background-color="#fff">
 
 []
 
