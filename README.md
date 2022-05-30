@@ -68,18 +68,8 @@ Make sure you open a pull request so that the code can be reviewed.
 
 ## Contact
 
-You can find me here:
+You can find me also here:
 
-<i class="fas fa-search"></i>
-
-[Facebook](https://www.facebook.com/giorgos.fragkias)
+![image](./images/fb_md_file.svg)[Giorgos Fragkias](https://www.facebook.com/giorgos.fragkias)
 
 [LinkedIn](https://www.linkedin.com/in/georgios-fragkias-56026382/)
-
-## License
-
-You can link to your license file here if you're using one, or mention what license the codebase falls under. If you're unsure then you can simply delete this section.
-
-## Acknowledgments
-
-This is where you can add any acknowledgements if you'd like, such as to people who have helped you or any code snippets you'd like to mention. You can delete this section if you don't have any acknowledgements to make.
