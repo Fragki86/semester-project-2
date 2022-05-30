@@ -1,6 +1,7 @@
-# Your project title
+# Eco Kids
 
-![image](https://user-images.githubusercontent.com/52622303/164316813-4b12d99f-aeb7-4069-85cf-e72b3a50ac99.png)
+![image](./images/eco-kids_sc.jpg)
+![image](./images/eco-kids_sc_mobile.jpg)
 
 A simple overview of the use/purpose of the project.
 
