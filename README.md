@@ -1,38 +1,39 @@
 # Eco Kids
 
 ![image](./images/eco-kids_sc.jpg)
-![image](./images/eco-kids_sc_mobile.jpg)
 
-A simple overview of the use/purpose of the project.
+E-commerce website selling toys .
 
 ## Description
 
-Add a more detailed description of what your project entails and set out to do.
+Website focusing on selling toys made from ecological and sustainable materials. The toys can be either new or used in a super good condition.
 
-You can add some bullet points if you'd like to:
-
-- List item 1
-- List item 2
-- List item 3
+- By logging in as an admin you can add/edit/delete products.
+- We give our best, so that the children will have the best to play with.
+- The used toys are being evaluated from us before we put them on sale.
+- The contact form can be used as an enquiry to sell a toy.
 
 ## Built With
 
-You can list a the tech stack that you've used over here
-
-- [React.js](https://reactjs.org/)
+- [Vanilla js](https://www.javascript.com/)
 - [Bootstrap](https://getbootstrap.com)
+- [Sass](https://sass-lang.com/)
+- [Strapi](https://strapi.io/)
+- [Cloudinary](https://cloudinary.com/)
 
 ## Getting Started
 
 ### Installing
 
-This is where you list how to get the project started. It typically just includes telling a person to clone the repo and then to install the dependencies e.g.
-
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:NoroffFEU/portfolio-1-example.git
+git clone git@github.com:Fragki86/semester-project-2.git
 ```
+
+OR
+
+download [GitHub Desktop](https://desktop.github.com/) and clone it straight from the repository.
 
 2. Install the dependencies:
 
@@ -40,23 +41,37 @@ git clone git@github.com:NoroffFEU/portfolio-1-example.git
 npm install
 ```
 
+3. Install following VS code extensions:
+
+- Live Sass Compiler
+- Live Server
+
 ### Running
 
-Here is where you detail how to run the app. It typically involves the commands you'd need to run to start the project e.g.
-
-To run the app, run the following commands:
-
-```bash
-npm run start
+1. Opening the project:
+Click on
 ```
+Go Live
+```
+
+And then
+```
+Watch Sass
+```
+on the bottom of the screen.
 
 ## Contributing
 
-Here you can detail any information you want to provide regarding contributing to the project. For big projects you will usually have a separate `CONTRIBUTING.md` and link to it, but for smaller projects you can simply include instructions here. These instructions can simply detail the process you want a person to take, such as to make sure to open a pull request so code can be reviewed.
+The project is open contribution, especially for backend developing. It would be nice to fulfil the payment method as well with a database. 
+We would be glad to here also opinions and suggestions regarding the design and effects.
+Make sure you open a pull request so that the code can be reviewed.
 
 ## Contact
 
-This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
+You can find me here:
+<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/crown.svg" width="50" height="50">
+
+[]
 
 [My Twitter page](www.twitter.com)
 
