@@ -70,11 +70,11 @@ Make sure you open a pull request so that the code can be reviewed.
 
 You can find me here:
 
-`fa(name = "r-project", fill = "steelblue")`
+<i class="fas fa-search"></i>
 
-[My Twitter page](www.twitter.com)
+[Facebook](https://www.facebook.com/giorgos.fragkias)
 
-[My LinkedIn page](www.linkedin.com)
+[LinkedIn](https://www.linkedin.com/in/georgios-fragkias-56026382/)
 
 ## License
 
