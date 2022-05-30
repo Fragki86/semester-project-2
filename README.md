@@ -70,7 +70,7 @@ Make sure you open a pull request so that the code can be reviewed.
 
 You can find me here:
 
-`r fa("r-project", fill = "steelblue")`
+`fa(name = "r-project", fill = "steelblue")`
 
 [My Twitter page](www.twitter.com)
 
